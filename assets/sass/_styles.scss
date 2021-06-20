@@ -1,0 +1,43 @@
+:root {
+  --clr-text-primary-dark : #333333;
+  --clr-text-primary-light: #BDBDBD;
+
+  --clr-accent: #02A2FD;
+
+  --clr-lines: #BDBDBD;
+
+  --ff-primary: 'Open Sans';
+  --ff-accent : 'Poppins';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin    : 0;
+  padding   : 0;
+}
+
+body {
+  color      : var(--clr-text-primary-dark);
+  font-family: var(--ff-primary);
+  font-weight: 400;
+  font-size  : 26px;
+  line-height: 38px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-accent);
+}
+
+.container {
+  margin: auto;
+  width : min(90%, 1280px);
+}
+
+.text-primary-light {
+  color: var(--clr-text-primary-light);
+}
