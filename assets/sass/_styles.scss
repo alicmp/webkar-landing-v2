@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap');
+
 :root {
   --clr-text-primary-dark : #333333;
   --clr-text-primary-light: #BDBDBD;
@@ -20,22 +22,30 @@
 
 body {
   color      : var(--clr-text-primary-dark);
-  font-family: var(--ff-primary);
+  font-family: var(--ff-primary), sans-serif;
   font-weight: 400;
-  font-size  : 26px;
-  line-height: 38px;
+  font-size  : 1.625rem;
+  line-height: 2.375rem;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--ff-accent);
+  font-family: var(--ff-accent), sans-serif;
+  font-weight: 600;
+}
+
+button {
+  font-family: var(--ff-primary), sans-serif;
 }
 
 .container {
   margin: auto;
-  width : min(90%, 1280px);
+  width : min(95%, 1280px);
+  @media (max-width: 860px) {
+    width : min(90%, 1280px);
+  }
 }
 
 .text-primary-light {
