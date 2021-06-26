@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap');
 
 :root {
-  --clr-text-primary-dark : #333333;
+  --clr-text-primary-dark : #392020;
   --clr-text-primary-light: #BDBDBD;
 
   --clr-accent: #02A2FD;
@@ -40,9 +40,15 @@ button {
   font-family: var(--ff-primary), sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: var(--clr-text-primary-dark);
+  font-weight: 600;
+}
+
 .container {
   margin: auto;
-  width : min(90%, 1440px);
+  width : min(90%, 1200px);
 }
 
 .text-primary-light {
@@ -51,6 +57,12 @@ button {
 
 .anim {
   opacity: 0;
+}
+
+.hide-mobile {
+  @media (max-width: 860px) {
+    display: none;
+  }
 }
 
 @keyframes anim1 {
