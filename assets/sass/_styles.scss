@@ -42,12 +42,33 @@ button {
 
 .container {
   margin: auto;
-  width : min(95%, 1280px);
-  @media (max-width: 860px) {
-    width : min(90%, 1280px);
-  }
+  width : min(90%, 1440px);
 }
 
 .text-primary-light {
   color: var(--clr-text-primary-light);
+}
+
+.anim {
+  opacity: 0;
+}
+
+@keyframes anim1 {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+  }
+  to  {
+    opacity: 1;
+  }
 }

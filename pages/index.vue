@@ -21,21 +21,33 @@
     </header>
 
     <section class="bio" id="bio">
-      <div class="ali">
+      <div class="ali anim">
         <div class="container">
-          <img src="@/assets/img/tmp.png" alt="Ali Kompany" />
+          <img
+            class="image"
+            src="@/assets/img/avatar/ali.jpg"
+            alt="Ali Kompany"
+          />
           <div class="text">
             <h2>I’m Ali,<br />Fullstack Developer</h2>
             <p>
-              Love to travel, code, play football and start new projects. Don’t
-              like to listen to load music with bad speaker and eggplant
+              Love to travel, code, play football and work on new projects.
+              Don’t like to listen to load music with bad speakers and eggplant
             </p>
+            <a class="get-resume-link" href="#"
+              >My Resume
+              <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
+            /></a>
           </div>
         </div>
       </div>
-      <div class="sahar">
+      <div class="sahar anim">
         <div class="container">
-          <img src="@/assets/img/tmp.png" alt="Sahar Hatami" />
+          <img
+            class="image"
+            src="@/assets/img/avatar/sahar.jpg"
+            alt="Sahar Hatami"
+          />
           <div class="text">
             <h2>
               I’m Sahar,<br />UI<span class="text-primary-light">&</span>UX
@@ -45,13 +57,17 @@
               Love to travel, meet friends and eat gummy candies. Don’t like to
               wake up early and have unfinished projects
             </p>
+            <a class="get-resume-link" href="#"
+              >My Resume
+              <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
+            /></a>
           </div>
         </div>
       </div>
     </section>
 
     <section class="work-info">
-      <div class="how">
+      <div class="how anim">
         <div class="container">
           <h2>How we work</h2>
           <div>
@@ -63,17 +79,17 @@
           </div>
         </div>
       </div>
-      <div class="what">
+      <div class="what anim">
         <div class="container">
           <h2>What we do</h2>
           <p>
-            We help design and create products and services that improve the
-            daily lives of humans, while meeting brand and business goals.
+            We design and create products and services that improve the daily
+            lives of humans, while meeting brand and business goals.
           </p>
         </div>
       </div>
 
-      <div class="container">
+      <div class="container anim">
         <a href="#" class="cto">
           Let’s talk about you
           <img src="@/assets/img/icon/arrow-right.png" />
@@ -82,7 +98,7 @@
     </section>
 
     <section class="contact">
-      <div class="container">
+      <div class="container anim">
         <h3>Contact</h3>
         <div class="text">
           <p>
@@ -116,7 +132,9 @@
 </template>
 
 <script>
+import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
 export default {
+  mixins: [animateOnScrollMixin],
   methods: {
     scrollToElement(id) {
       let el = document.getElementById(id);
@@ -171,11 +189,27 @@ section {
     line-height: 1.87rem !important;
   }
 }
+
+// animation
+
+@keyframes moveDown {
+  to {
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes moveUp {
+  to {
+    transform: translateY(-1rem);
+  }
+}
+
 header {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: headerReveal 2s forwards 500ms ease-in;
   @media (max-width: 860px) {
     position: relative;
   }
@@ -200,34 +234,38 @@ header {
     bottom: 0;
     right: 0;
     @media (max-width: 860px) {
-      bottom: 2rem;
+      bottom: 3rem;
       right: 50%;
     }
     cursor: pointer;
     transition: 100ms all;
-    &:hover {
-      transform: translateY(0.5rem);
-    }
+    animation: moveDown 500ms alternate-reverse infinite ease;
   }
 }
 
 .bio {
   .ali,
   .sahar {
+    overflow: hidden;
     .container {
       display: flex;
       @media (max-width: 860px) {
         flex-direction: column;
       }
       position: relative;
-      img {
+      .image {
         @media (min-width: 860px) {
           position: absolute;
-          bottom: 0;
+          top: 5rem;
           z-index: -1;
         }
         max-width: 52.4rem;
         height: auto;
+        object-fit: cover;
+        @media (max-width: 860px) {
+          height: 35.6rem;
+          width: 100%;
+        }
       }
       .text {
         h2 {
@@ -236,7 +274,27 @@ header {
         p {
           max-width: 29.3rem;
           @media (min-width: 860px) {
-            margin-top: 5rem;
+            margin-top: 10rem;
+          }
+        }
+        .get-resume-link {
+          text-decoration: none;
+          color: var(--clr-text-primary-color);
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          max-width: 15rem;
+          margin-top: 1rem;
+          img {
+            margin-top: 6px;
+            margin-left: 2rem;
+            transition: all 0.3s ease-in-out;
+          }
+          &:hover,
+          &:focus {
+            img {
+              transform: translateX(-1rem);
+            }
           }
         }
       }
@@ -245,13 +303,17 @@ header {
   .ali {
     .container {
       justify-content: flex-end;
-      img {
+      .image {
         left: 0;
       }
       .text {
         text-align: right;
         p {
           margin-left: auto;
+        }
+        .get-resume-link {
+          margin-left: auto;
+          justify-content: flex-end;
         }
       }
     }
@@ -263,12 +325,16 @@ header {
     }
     .container {
       justify-content: flex-start;
-      img {
+      .image {
         right: 0;
+        top: 0;
       }
       .text {
         p {
           margin-right: auto;
+          @media (min-width: 860px) {
+            margin-top: 18rem;
+          }
         }
       }
     }
@@ -310,6 +376,7 @@ header {
       font-size: 2.3rem;
     }
     @media (max-width: 860px) {
+      font-size: 1.4rem;
       padding: 1rem 2rem;
       margin-top: 6rem;
       margin-bottom: 3rem;
@@ -362,7 +429,7 @@ header {
     color: #fff;
     font-size: 7.5rem;
     img {
-      transition: all 100ms ease-in;
+      animation: moveUp 500ms alternate-reverse infinite ease;
     }
     @media (max-width: 860px) {
       height: 12.25rem;
@@ -373,11 +440,6 @@ header {
       .mobile-hidden {
         display: none;
       }
-    }
-  }
-  button:hover {
-    img {
-      transform: translateY(-16px);
     }
   }
 }
