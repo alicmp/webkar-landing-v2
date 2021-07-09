@@ -14,13 +14,13 @@
           class="arrow"
           src="@/assets/img/icon/arrow-down.png"
           alt=""
-          @click="scrollToElement('bio')"
+          @click="scrollToElement('ali')"
         />
       </div>
     </header>
 
-    <section class="bio" id="bio">
-      <div class="ali anim">
+    <section class="bio">
+      <div class="ali anim" id="ali">
         <div class="container">
           <div class="image">
             <img src="@/assets/img/avatar/ali.jpg" alt="Ali Kompany" />
@@ -28,8 +28,8 @@
           <div class="text">
             <h2>I’m Ali,<br />Fullstack Developer</h2>
             <p>
-              Love to travel, code, play football and work on new projects.
-              Don’t like to listen to load music with bad speakers and eggplant
+              Early bird. love to travel, write code and play football. Don’t
+              like to listen to load music with bad speakers and eggplant.
             </p>
             <a class="get-resume-link" href="/resume/AliKompany.pdf" download=""
               >My Resume
@@ -51,8 +51,8 @@
               Designer
             </h2>
             <p>
-              Love to travel, meet friends and eat gummy candies. Don’t like to
-              wake up early and have unfinished projects
+              Night owl. love travel, new challenges, meet friends and eat gummy
+              candies. Don’t like to have unfinished tasks.
             </p>
             <a
               class="get-resume-link"
@@ -95,6 +95,57 @@
           Let’s talk about work
           <img src="@/assets/img/icon/arrow-right.png" />
         </a>
+      </div>
+    </section>
+
+    <section class="work-sample anim-dark">
+      <div class="lines">
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+      </div>
+      <div class="container">
+        <div class="sample-col col-1">
+          <div class="sample anim">
+            <h4>Interior Solutions</h4>
+            <p>#UIUX #Wordpress</p>
+            <div class="image-container">
+              <img
+                src="@/assets/img/works/1-interiorsolutions.jpg"
+                alt="Interior Solutions Website"
+              />
+            </div>
+          </div>
+          <div class="sample anim">
+            <h4>Fittoeco Tourisem</h4>
+            <p>#UIUX #ios #app</p>
+            <div class="image-container">
+              <img
+                src="@/assets/img/works/3-fitto.jpg"
+                alt="Fittoeco Tourisem"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="sample-col col-2">
+          <h2 class="">Works</h2>
+          <div class="sample anim">
+            <h4>DD-Lock</h4>
+            <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
+            <div class="image-container">
+              <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
+            </div>
+          </div>
+          <div class="sample anim">
+            <h4>Kala Raad</h4>
+            <p>#UIUX #crm #Django #Nuxt.js</p>
+            <div class="image-container">
+              <img src="@/assets/img/works/6-kalaraad.jpg" alt="Kala Raad" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -145,6 +196,31 @@ export default {
       }
     },
   },
+  mounted() {
+    const elements = document.querySelectorAll(".anim-dark");
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const animateOnScrollObserver = new IntersectionObserver(
+      (entries, animateOnScrollObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("dark");
+            animateOnScrollObserver.unobserve(entry.target);
+          }
+        });
+      },
+      options
+    );
+
+    elements.forEach((el) => {
+      animateOnScrollObserver.observe(el);
+    });
+  },
   head() {
     return {
       title: `Home - Webkar`,
@@ -162,35 +238,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1,
-h2 {
-  font-size: 7.5rem;
-  line-height: 11.25rem;
-}
-h2 {
-  line-height: 10rem;
-}
-section {
-  padding: 5rem 0;
-  @media (max-width: 860px) {
-    padding: 3rem 0;
-  }
-}
-.mt-4 {
-  margin-top: 2rem;
-}
-@media (max-width: 860px) {
-  h1,
-  h2 {
-    font-size: 3.1rem;
-    line-height: 5.25rem;
-  }
-  p {
-    font-size: 1.5rem !important;
-    line-height: 1.87rem !important;
-  }
-}
-
 // animation
 
 @keyframes moveDown {
@@ -223,6 +270,16 @@ section {
   }
   90% {
     transform: translate(-30%, -12%);
+  }
+}
+
+@keyframes lightToDark {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: #101010;
+    color: #fff;
   }
 }
 
@@ -315,7 +372,10 @@ header {
         text-align: right;
         h2 {
           max-width: 60rem;
-          -webkit-text-stroke: 1.5px var(--clr-text-primary-dark);
+          -webkit-text-stroke: 4px var(--clr-text-primary-dark);
+          @media (max-width: 860px) {
+            -webkit-text-stroke: 2px var(--clr-text-primary-dark);
+          }
           -webkit-text-fill-color: #fff;
         }
         p {
@@ -432,7 +492,96 @@ header {
   }
 }
 
+.work-sample {
+  position: relative;
+  @media (min-width: 860px) {
+    padding: 10rem 0 3rem 0;
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    @media (max-width: 860px) {
+      flex-direction: column-reverse;
+    }
+    .col-1 {
+      @media (min-width: 860px) {
+        margin-top: 2.5rem;
+      }
+    }
+    .col-2 {
+      @media (min-width: 860px) {
+        margin-left: 2.5rem;
+      }
+      h2 {
+        text-align: right;
+        margin-bottom: 12.87rem;
+        @media (max-width: 860px) {
+          margin-bottom: 2.87rem;
+        }
+      }
+    }
+    .sample-col {
+      .sample {
+        margin-bottom: 9.75rem;
+        @media (max-width: 860px) {
+          margin-bottom: 3.75rem;
+        }
+        h4 {
+          font-size: 1.75rem;
+        }
+        p {
+          margin-bottom: 1.5rem;
+          font-size: 1.25rem;
+          @media (max-width: 860px) {
+            font-size: 1rem !important;
+          }
+          color: #e0e0e0;
+        }
+        .image-container {
+          overflow: hidden;
+          border-radius: 1.25rem;
+          margin-left: 2rem;
+          img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            vertical-align: top;
+          }
+        }
+        &:hover {
+          .image-container {
+            img {
+              transform: scale(1.07);
+            }
+          }
+        }
+      }
+    }
+  }
+  .lines {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    hr {
+      border: 0.5px solid #828282;
+      opacity: 0.1;
+    }
+  }
+}
+
+.dark {
+  animation: lightToDark 2s ease;
+  animation-fill-mode: forwards;
+}
+
 .contact {
+  padding: 16rem 0;
   .container {
     display: flex;
     @media (max-width: 860px) {
@@ -454,7 +603,7 @@ header {
 }
 
 .back-to-top {
-  padding-bottom: 0;
+  padding: 0;
   button {
     border: none;
     cursor: pointer;
@@ -485,6 +634,38 @@ footer {
   .container {
     padding: 2rem 0;
     text-align: center;
+  }
+}
+
+h1,
+h2 {
+  font-size: 7.5rem;
+  line-height: 11.25rem;
+}
+h2 {
+  line-height: 10rem;
+}
+section {
+  padding: 7rem 0;
+  @media (max-width: 860px) {
+    padding: 3rem 0;
+  }
+}
+.mt-4 {
+  margin-top: 2rem;
+}
+@media (max-width: 860px) {
+  h1,
+  h2 {
+    font-size: 3.1rem;
+    line-height: 5.25rem;
+  }
+  h4 {
+    font-size: 1.5rem !important;
+  }
+  p {
+    font-size: 1.5rem !important;
+    line-height: 1.87rem !important;
   }
 }
 </style>

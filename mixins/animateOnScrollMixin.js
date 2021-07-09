@@ -5,14 +5,14 @@ export default {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0
+      threshold: 0.1,
     }
 
     const animateOnScrollObserver = new IntersectionObserver(
       (entries, animateOnScrollObserver) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animation = `anim1 1s forwards ease`;
+            entry.target.style.animation = `anim1 1.5s forwards ease`;
             animateOnScrollObserver.unobserve(entry.target);
           } else {
             entry.target.style.animation = "none";
