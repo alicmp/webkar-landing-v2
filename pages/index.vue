@@ -66,7 +66,7 @@
     <section class="work-info px-l">
       <div class="how anim">
         <div class="container">
-          <h2>How we work</h2>
+          <h2 class="mb-title">How we work</h2>
           <div>
             <p>
               We work on full remote. As we value strong relationship with our
@@ -78,7 +78,7 @@
       </div>
       <div class="what anim">
         <div class="container">
-          <h2>What we do</h2>
+          <h2 class="mb-title">What we do</h2>
           <p>
             Whether you want a landing page or web application, We design
             (UI/UX) and develop (Django/Vue.js) your ideas and make them
@@ -128,7 +128,7 @@
             </div>
           </div>
           <div class="sample-col col-2">
-            <h2 class="anim">Recent Projects</h2>
+            <h2 class="anim">Recent<br />Projects</h2>
             <div class="sample anim">
               <h4>DD-Lock</h4>
               <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
@@ -150,28 +150,29 @@
 
     <section class="youtube px-l">
       <div class="container anim">
-        <h2>Check us on <br />Youtube</h2>
-        <p>
-          We recently started our youtube channel. We plan to post programming
-          and UI/UX tutorial.
-
+        <h2 class="mb-title">Check us on <br />Youtube</h2>
+        <div class="info">
+          <p>
+            We recently started our youtube channel. We plan to post programming
+            and UI/UX tutorials.
+          </p>
           <a
             class="arrow-link"
             href="https://www.youtube.com/channel/UC6IH7w-m-l-eaKTzyib-Rfg"
             >Visit Our Channel
             <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
           /></a>
-        </p>
+        </div>
       </div>
     </section>
 
-    <section class="contact px-l pb-xl">
+    <section class="contact px-l">
       <div class="container anim">
-        <h3>Contact</h3>
+        <h3 class="mb-title">Contact</h3>
         <div class="text">
           <p>
-            If you want to get in touch or if you have any questions, please
-            contact us at <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
+            If you want to get in touch or if want to know more, please contact
+            us <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
           </p>
         </div>
         <div class="socials">
@@ -293,7 +294,7 @@ header {
     bottom: 0;
     right: 0;
     @media (max-width: 860px) {
-      bottom: 5rem;
+      bottom: 6.5rem;
       right: 50%;
     }
     cursor: pointer;
@@ -355,6 +356,9 @@ header {
           -webkit-text-stroke: 4px var(--clr-text-primary-dark);
           @media (max-width: 860px) {
             -webkit-text-stroke: 2px var(--clr-text-primary-dark);
+            font-size: 3rem;
+            line-height: 4.375rem;
+            margin: 1.5rem 0 3.4375rem 0;
           }
           -webkit-text-fill-color: #fff;
         }
@@ -435,12 +439,17 @@ header {
       font-size: 2.3rem;
     }
     @media (max-width: 860px) {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
       font-size: 1.4rem;
       padding: 1rem 2rem;
       margin-top: 6rem;
       margin-bottom: 3rem;
+      background-color: var(--clr-text-primary-dark);
+      color: #fff;
       img {
-        width: 2rem;
+        display: none;
       }
     }
   }
@@ -478,7 +487,7 @@ header {
           text-align: right;
           margin-bottom: 8.87rem;
           @media (max-width: 860px) {
-            margin-bottom: 2.87rem;
+            margin-bottom: 4.5rem;
           }
         }
       }
@@ -496,6 +505,7 @@ header {
             font-size: 1.25rem;
             @media (max-width: 860px) {
               font-size: 1rem !important;
+              margin-bottom: 1rem;
             }
           }
           .image-container {
@@ -528,6 +538,9 @@ header {
       width: 100%;
       display: flex;
       justify-content: space-around;
+      @media (max-width: 860px) {
+        display: none;
+      }
       hr {
         border: 0.5px solid #828282;
         opacity: 0.1;
@@ -538,11 +551,16 @@ header {
 
 .youtube {
   .container {
-    p {
-      max-width: 37rem;
+    @media (max-width: 860px) {
+      text-align: right;
+    }
+    .info {
       margin-left: auto;
-      .arrow-link {
-        max-width: max-content;
+      max-width: 37rem;
+      @media (max-width: 860px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
       }
     }
   }
@@ -565,10 +583,10 @@ header {
       }
       p {
         max-width: 36.5rem;
-        @media (max-width: 860px) {
-          padding: 1rem 0;
-        }
       }
+    }
+    .socials {
+      margin-top: 1.5rem;
     }
   }
 }
@@ -622,15 +640,15 @@ h2 {
 @media (max-width: 860px) {
   h1,
   h2 {
-    font-size: 3.1rem;
-    line-height: 5.25rem;
+    font-size: 2.6rem;
+    line-height: 3.75rem;
   }
   h4 {
     font-size: 1.5rem !important;
   }
   p {
-    font-size: 1.5rem !important;
-    line-height: 1.87rem !important;
+    font-size: 1.625rem !important;
+    line-height: 2.5rem !important;
   }
 }
 </style>

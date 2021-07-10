@@ -32,7 +32,8 @@ export default {};
       font-weight: 700;
       align-items: center;
       color: var(--text-dark);
-      font-size: 18px;
+      font-size: 1.5rem;
+      font-family: var(--ff-accent), sans-serif;
     }
     .logo {
       height: 40px;

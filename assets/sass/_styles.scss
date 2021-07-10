@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap');
 
-$px : 7rem;
-$px-mobile : 5rem;
+$px        : 7rem;
+$px-mobile : 4rem;
 
 :root {
   --clr-text-primary-dark : #392020;
@@ -45,8 +45,8 @@ button {
 
 a {
   text-decoration: none;
-  color: var(--clr-text-primary-dark);
-  font-weight: 600;
+  color          : var(--clr-text-primary-dark);
+  font-weight    : 600;
 }
 
 .container {
@@ -69,15 +69,17 @@ a {
 }
 
 .arrow-link {
-  display: flex;
+  display    : flex;
   align-items: center;
-  max-width: 18rem;
-  margin-top: 1rem;
+  max-width  : 18rem;
+  margin-top : 1.5rem;
+
   img {
-    margin-top: 6px;
+    margin-top : 6px;
     margin-left: 2rem;
-    transition: all 0.3s ease-in-out;
+    transition : all 0.3s ease-in-out;
   }
+
   &:hover,
   &:focus {
     img {
@@ -88,33 +90,43 @@ a {
 
 .px-l {
   padding: $px 0;
+
   @media (max-width: 860px) {
     padding: $px-mobile 0;
   }
 }
 
 .pt-xl {
-  padding-top: calc($px * 2);
+  padding-top: calc(#{$px} * 2);
+
   @media (max-width: 860px) {
-    padding-top: calc($px-mobile * 2);
+    padding-top: calc(#{$px-mobile} * 2);
   }
 }
 
 .pb-xl {
   padding-bottom: calc(#{$px} * 2);
+
   @media (max-width: 860px) {
     padding-bottom: calc(#{$px-mobile} * 2);
+  }
+}
+
+.mb-title {
+  @media (max-width: 860px) {
+    margin-bottom: 2.5rem;
   }
 }
 
 @keyframes anim1 {
   from {
     transform: translateY(200px);
-    opacity: 0;
+    opacity  : 0;
   }
-  to  {
+
+  to {
     transform: translateY(0);
-    opacity: 1;
+    opacity  : 1;
   }
 }
 
@@ -122,7 +134,8 @@ a {
   from {
     opacity: 0;
   }
-  to  {
+
+  to {
     opacity: 1;
   }
 }
