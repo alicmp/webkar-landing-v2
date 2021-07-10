@@ -19,7 +19,7 @@
       </div>
     </header>
 
-    <section class="bio">
+    <section class="bio px-l">
       <div class="ali anim" id="ali">
         <div class="container">
           <div class="image">
@@ -63,7 +63,7 @@
       </div>
     </section>
 
-    <section class="work-info">
+    <section class="work-info px-l">
       <div class="how anim">
         <div class="container">
           <h2>How we work</h2>
@@ -95,58 +95,60 @@
       </div>
     </section>
 
-    <section class="work-sample anim-dark">
-      <div class="lines">
-        <hr />
-        <hr />
-        <hr />
-        <hr />
-        <hr />
-      </div>
-      <div class="container">
-        <div class="sample-col col-1">
-          <div class="sample anim">
-            <h4>Interior Solutions</h4>
-            <p>#UIUX #Wordpress</p>
-            <div class="image-container">
-              <img
-                src="@/assets/img/works/1-interiorsolutions.jpg"
-                alt="Interior Solutions Website"
-              />
-            </div>
-          </div>
-          <div class="sample anim">
-            <h4>Fittoeco Tourisem</h4>
-            <p>#UIUX #ios #app</p>
-            <div class="image-container">
-              <img
-                src="@/assets/img/works/3-fitto.jpg"
-                alt="Fittoeco Tourisem"
-              />
-            </div>
-          </div>
+    <section class="work-sample anim-dark px-l">
+      <div class="work-sample-container px-l">
+        <div class="lines">
+          <hr />
+          <hr />
+          <hr />
+          <hr />
+          <hr />
         </div>
-        <div class="sample-col col-2">
-          <h2 class="">Recent Projects</h2>
-          <div class="sample anim">
-            <h4>DD-Lock</h4>
-            <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
-            <div class="image-container">
-              <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
+        <div class="container">
+          <div class="sample-col col-1">
+            <div class="sample anim">
+              <h4>Interior Solutions</h4>
+              <p>#UIUX #Wordpress</p>
+              <div class="image-container">
+                <img
+                  src="@/assets/img/works/1-interiorsolutions.jpg"
+                  alt="Interior Solutions Website"
+                />
+              </div>
+            </div>
+            <div class="sample anim">
+              <h4>Fittoeco Tourisem</h4>
+              <p>#UIUX #ios #app</p>
+              <div class="image-container">
+                <img
+                  src="@/assets/img/works/3-fitto.jpg"
+                  alt="Fittoeco Tourisem"
+                />
+              </div>
             </div>
           </div>
-          <div class="sample anim">
-            <h4>Kala Raad</h4>
-            <p>#UIUX #crm #Django #Nuxt.js</p>
-            <div class="image-container">
-              <img src="@/assets/img/works/6-kalaraad.jpg" alt="Kala Raad" />
+          <div class="sample-col col-2">
+            <h2 class="anim">Recent Projects</h2>
+            <div class="sample anim">
+              <h4>DD-Lock</h4>
+              <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
+              <div class="image-container">
+                <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
+              </div>
+            </div>
+            <div class="sample anim">
+              <h4>Kala Raad</h4>
+              <p>#UIUX #crm #Django #Nuxt.js</p>
+              <div class="image-container">
+                <img src="@/assets/img/works/6-kalaraad.jpg" alt="Kala Raad" />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="youtube">
+    <section class="youtube px-l">
       <div class="container anim">
         <h2>Check us on <br />Youtube</h2>
         <p>
@@ -163,13 +165,13 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact px-l pb-xl">
       <div class="container anim">
         <h3>Contact</h3>
         <div class="text">
           <p>
-            If you want to get in touch or if you have any questions, please contact
-            us at <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
+            If you want to get in touch or if you have any questions, please
+            contact us at <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
           </p>
         </div>
         <div class="socials">
@@ -409,8 +411,8 @@ header {
       }
     }
   }
-  .what {
-    margin-top: 5rem;
+  .how {
+    margin-bottom: 5rem;
     .container {
       align-items: flex-end;
       text-align: right;
@@ -453,84 +455,83 @@ header {
 }
 
 .work-sample {
-  position: relative;
-  background-color: #F3F4F6;
-  @media (min-width: 860px) {
-    padding: 10rem 0 3rem 0;
-  }
-  .container {
+  .work-sample-container {
     position: relative;
-    z-index: 10;
-    display: flex;
-    @media (max-width: 860px) {
-      flex-direction: column-reverse;
-    }
-    .col-1 {
-      @media (min-width: 860px) {
-        margin-top: 2.5rem;
+    background-color: #f3f4f6;
+    .container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      @media (max-width: 860px) {
+        flex-direction: column-reverse;
       }
-    }
-    .col-2 {
-      @media (min-width: 860px) {
-        margin-left: 2.5rem;
-      }
-      h2 {
-        text-align: right;
-        margin-bottom: 8.87rem;
-        @media (max-width: 860px) {
-          margin-bottom: 2.87rem;
+      .col-1 {
+        @media (min-width: 860px) {
+          margin-top: 10rem;
         }
       }
-    }
-    .sample-col {
-      .sample {
-        margin-bottom: 9.75rem;
-        @media (max-width: 860px) {
-          margin-bottom: 3.75rem;
+      .col-2 {
+        @media (min-width: 860px) {
+          margin-left: 2.5rem;
         }
-        h4 {
-          font-size: 1.75rem;
-        }
-        p {
-          margin-bottom: 1.5rem;
-          font-size: 1.25rem;
+        h2 {
+          text-align: right;
+          margin-bottom: 8.87rem;
           @media (max-width: 860px) {
-            font-size: 1rem !important;
+            margin-bottom: 2.87rem;
           }
         }
-        .image-container {
-          overflow: hidden;
-          border-radius: 1.25rem;
-          margin-left: 2rem;
-          img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            vertical-align: top;
+      }
+      .sample-col {
+        .sample {
+          margin-bottom: 9.75rem;
+          @media (max-width: 860px) {
+            margin-bottom: 3.75rem;
           }
-        }
-        &:hover {
+          h4 {
+            font-size: 1.75rem;
+          }
+          p {
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            @media (max-width: 860px) {
+              font-size: 1rem !important;
+            }
+          }
           .image-container {
+            overflow: hidden;
+            border-radius: 1.25rem;
+            margin-left: 2rem;
             img {
-              transform: scale(1.07);
+              max-width: 100%;
+              height: auto;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+              vertical-align: top;
+            }
+          }
+          &:hover {
+            .image-container {
+              img {
+                transform: scale(1.07);
+              }
             }
           }
         }
       }
     }
-  }
-  .lines {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 5;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    hr {
-      border: 0.5px solid #828282;
-      opacity: 0.1;
+    .lines {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 5;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      hr {
+        border: 0.5px solid #828282;
+        opacity: 0.1;
+      }
     }
   }
 }
@@ -548,10 +549,6 @@ header {
 }
 
 .contact {
-  padding-bottom: 14rem;
-  @media (max-width: 860px) {
-    padding-bottom: 6rem;
-  }
   .container {
     display: flex;
     @media (max-width: 860px) {
@@ -618,12 +615,6 @@ h2 {
 }
 h2 {
   line-height: 10rem;
-}
-section {
-  padding: 7rem 0;
-  @media (max-width: 860px) {
-    padding: 3rem 0;
-  }
 }
 .mt-4 {
   margin-top: 2rem;

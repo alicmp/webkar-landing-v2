@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap');
 
+$px : 7rem;
+$px-mobile : 5rem;
+
 :root {
   --clr-text-primary-dark : #392020;
   --clr-text-primary-light: #BDBDBD;
@@ -80,6 +83,27 @@ a {
     img {
       transform: translateX(-1rem);
     }
+  }
+}
+
+.px-l {
+  padding: $px 0;
+  @media (max-width: 860px) {
+    padding: $px-mobile 0;
+  }
+}
+
+.pt-xl {
+  padding-top: calc($px * 2);
+  @media (max-width: 860px) {
+    padding-top: calc($px-mobile * 2);
+  }
+}
+
+.pb-xl {
+  padding-bottom: calc(#{$px} * 2);
+  @media (max-width: 860px) {
+    padding-bottom: calc(#{$px-mobile} * 2);
   }
 }
 
