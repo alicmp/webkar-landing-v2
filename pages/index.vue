@@ -557,6 +557,9 @@ header {
     .info {
       margin-left: auto;
       max-width: 37rem;
+      .arrow-link {
+        max-width: max-content;
+      }
       @media (max-width: 860px) {
         display: flex;
         flex-direction: column;
