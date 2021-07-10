@@ -151,7 +151,7 @@
         <h2>Check us on <br />Youtube</h2>
         <p>
           We recently started our youtube channel. We plan to post programming
-          and UI/Ux tutorial.
+          and UI/UX tutorial.
 
           <a
             class="arrow-link"
@@ -165,7 +165,7 @@
 
     <section class="contact">
       <div class="container anim">
-        <h3>Contact Us</h3>
+        <h3>Contact</h3>
         <div class="text">
           <p>
             If you want to get in touch or if you have any questions, please contact
