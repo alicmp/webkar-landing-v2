@@ -31,7 +31,7 @@
               Early bird. love to travel, write code and play football. Don’t
               like to listen to load music with bad speakers and eggplant.
             </p>
-            <a class="get-resume-link" href="/resume/AliKompany.pdf" download=""
+            <a class="arrow-link" href="/resume/AliKompany.pdf" download=""
               >My Resume
               <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
             /></a>
@@ -54,10 +54,7 @@
               Night owl. love travel, new challenges, meet friends and eat gummy
               candies. Don’t like to have unfinished tasks.
             </p>
-            <a
-              class="get-resume-link"
-              href="/resume/SaharHatami.pdf"
-              download=""
+            <a class="arrow-link" href="/resume/SaharHatami.pdf" download=""
               >My Resume
               <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
             /></a>
@@ -130,7 +127,7 @@
           </div>
         </div>
         <div class="sample-col col-2">
-          <h2 class="">Works</h2>
+          <h2 class="">Recent Projects</h2>
           <div class="sample anim">
             <h4>DD-Lock</h4>
             <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
@@ -149,14 +146,30 @@
       </div>
     </section>
 
+    <section class="youtube">
+      <div class="container anim">
+        <h2>Check us on <br />Youtube</h2>
+        <p>
+          We recently started our youtube channel. We plan to post programming
+          and UI/Ux tutorial.
+
+          <a
+            class="arrow-link"
+            href="https://www.youtube.com/channel/UC6IH7w-m-l-eaKTzyib-Rfg"
+            >Visit Our Channel
+            <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
+          /></a>
+        </p>
+      </div>
+    </section>
+
     <section class="contact">
       <div class="container anim">
-        <h3>Contact</h3>
+        <h3>Contact Us</h3>
         <div class="text">
           <p>
-            If you want to get in touch or want to know more, please contact
-            us.<br />
-            hi@webkar.xyz
+            If you want to get in touch or if you have any questions, please contact
+            us at <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
           </p>
         </div>
         <div class="socials">
@@ -195,31 +208,6 @@ export default {
         el.scrollIntoView({ behavior: "smooth" });
       }
     },
-  },
-  mounted() {
-    const elements = document.querySelectorAll(".anim-dark");
-
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
-
-    const animateOnScrollObserver = new IntersectionObserver(
-      (entries, animateOnScrollObserver) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("dark");
-            animateOnScrollObserver.unobserve(entry.target);
-          }
-        });
-      },
-      options
-    );
-
-    elements.forEach((el) => {
-      animateOnScrollObserver.observe(el);
-    });
   },
   head() {
     return {
@@ -270,16 +258,6 @@ export default {
   }
   90% {
     transform: translate(-30%, -12%);
-  }
-}
-
-@keyframes lightToDark {
-  from {
-    background-color: #fff;
-  }
-  to {
-    background-color: #101010;
-    color: #fff;
   }
 }
 
@@ -384,23 +362,6 @@ header {
             margin-top: 10.5rem;
           }
         }
-        .get-resume-link {
-          display: flex;
-          align-items: center;
-          max-width: 15rem;
-          margin-top: 1rem;
-          img {
-            margin-top: 6px;
-            margin-left: 2rem;
-            transition: all 0.3s ease-in-out;
-          }
-          &:hover,
-          &:focus {
-            img {
-              transform: translateX(-1rem);
-            }
-          }
-        }
       }
     }
   }
@@ -485,7 +446,6 @@ header {
   .cto:hover {
     background-color: var(--clr-text-primary-dark);
     color: #fff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     img {
       filter: invert(100%);
     }
@@ -494,6 +454,7 @@ header {
 
 .work-sample {
   position: relative;
+  background-color: #F3F4F6;
   @media (min-width: 860px) {
     padding: 10rem 0 3rem 0;
   }
@@ -515,7 +476,7 @@ header {
       }
       h2 {
         text-align: right;
-        margin-bottom: 12.87rem;
+        margin-bottom: 8.87rem;
         @media (max-width: 860px) {
           margin-bottom: 2.87rem;
         }
@@ -536,7 +497,6 @@ header {
           @media (max-width: 860px) {
             font-size: 1rem !important;
           }
-          color: #e0e0e0;
         }
         .image-container {
           overflow: hidden;
@@ -575,17 +535,31 @@ header {
   }
 }
 
-.dark {
-  animation: lightToDark 2s ease;
-  animation-fill-mode: forwards;
+.youtube {
+  .container {
+    p {
+      max-width: 37rem;
+      margin-left: auto;
+      .arrow-link {
+        max-width: max-content;
+      }
+    }
+  }
 }
 
 .contact {
-  padding: 16rem 0;
+  padding-bottom: 14rem;
+  @media (max-width: 860px) {
+    padding-bottom: 6rem;
+  }
   .container {
     display: flex;
     @media (max-width: 860px) {
       flex-direction: column;
+      h3 {
+        font-size: 3.1rem;
+        line-height: 5.25rem;
+      }
     }
     .text {
       width: 100%;
@@ -595,7 +569,7 @@ header {
       p {
         max-width: 36.5rem;
         @media (max-width: 860px) {
-          padding: 2rem 0;
+          padding: 1rem 0;
         }
       }
     }

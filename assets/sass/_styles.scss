@@ -65,6 +65,24 @@ a {
   }
 }
 
+.arrow-link {
+  display: flex;
+  align-items: center;
+  max-width: 18rem;
+  margin-top: 1rem;
+  img {
+    margin-top: 6px;
+    margin-left: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover,
+  &:focus {
+    img {
+      transform: translateX(-1rem);
+    }
+  }
+}
+
 @keyframes anim1 {
   from {
     transform: translateY(200px);
