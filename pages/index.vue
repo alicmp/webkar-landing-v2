@@ -7,8 +7,8 @@
         </h1>
         <hr />
         <p>
-          We are a team of two freelancers. We design and create products and
-          services that improve the daily lives of humans.
+          We create products and services that improve the daily lives of
+          humans.
         </p>
         <img
           class="arrow"
@@ -18,50 +18,6 @@
         />
       </div>
     </header>
-
-    <section class="bio px-l">
-      <div class="ali anim" id="ali">
-        <div class="container">
-          <div class="image">
-            <img src="@/assets/img/avatar/ali.jpg" alt="Ali Kompany" />
-          </div>
-          <div class="text">
-            <h2>I’m Ali,<br />Fullstack Developer</h2>
-            <p>
-              Early bird. love to travel, write code and play football. Don’t
-              like to listen to load music with bad speakers and eggplant.
-            </p>
-            <a class="arrow-link" href="/resume/AliKompany.pdf" download=""
-              >My Resume
-              <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
-            /></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="sahar anim">
-        <div class="container">
-          <div class="image">
-            <img src="@/assets/img/avatar/sahar.jpg" alt="Sahar Hatami" />
-          </div>
-          <div class="text">
-            <h2>
-              I’m Sahar,<br />UI<span class="text-primary-light">&</span>UX
-              <br class="hide-mobile" />
-              Designer
-            </h2>
-            <p>
-              Night owl. love travel, new challenges, meet friends and eat gummy
-              candies. Don’t like to have unfinished tasks.
-            </p>
-            <a class="arrow-link" href="/resume/SaharHatami.pdf" download=""
-              >My Resume
-              <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
-            /></a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="work-info px-l">
       <div class="how anim">
@@ -626,6 +582,9 @@ footer {
   .container {
     padding: 2rem 0;
     text-align: center;
+    @media (max-width: 860px) {
+      font-size: 18px;
+    }
   }
 }
 
