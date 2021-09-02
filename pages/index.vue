@@ -220,7 +220,7 @@ header {
     max-width: 76.8rem;
   }
   hr {
-    border: 3px solid var(--clr-lines);
+    border: none;
     margin: 2rem 0;
   }
   hr,
@@ -554,32 +554,6 @@ footer {
     @media (max-width: 860px) {
       font-size: 18px;
     }
-  }
-}
-
-h1,
-h2 {
-  font-size: 7.5rem;
-  line-height: 11.25rem;
-}
-h2 {
-  line-height: 10rem;
-}
-.mt-4 {
-  margin-top: 2rem;
-}
-@media (max-width: 860px) {
-  h1,
-  h2 {
-    font-size: 2.6rem;
-    line-height: 3.75rem;
-  }
-  h4 {
-    font-size: 1.5rem !important;
-  }
-  p {
-    font-size: 1.625rem !important;
-    line-height: 2.5rem !important;
   }
 }
 </style>
