@@ -3,7 +3,8 @@
     <header id="header">
       <div class="container">
         <h1>
-          We Design <span class="text-primary-light">&</span> Develop Your Ideas
+          Hi, I'm Sahar <br />
+          UI/UX Designer
         </h1>
         <hr />
         <p>
@@ -18,38 +19,6 @@
         />
       </div>
     </header>
-
-    <section class="work-info px-l">
-      <div class="how anim">
-        <div class="container">
-          <h2 class="mb-title">How we work</h2>
-          <div>
-            <p>
-              We work on full remote. As we value strong relationship with our
-              customers, we adapt to your timeline, wherever you are.
-            </p>
-            <!-- <p class="mt-4">Currently in Shiraz 8:21:58 PM</p> -->
-          </div>
-        </div>
-      </div>
-      <div class="what anim">
-        <div class="container">
-          <h2 class="mb-title">What we do</h2>
-          <p>
-            Whether you want a landing page or web application, We design
-            (UI/UX) and develop (Django/Vue.js) your ideas and make them
-            reality.
-          </p>
-        </div>
-      </div>
-
-      <div class="container anim">
-        <a href="mailto:hi@webkar.xyz" class="cto">
-          Let’s talk about work
-          <img src="@/assets/img/icon/arrow-right.png" />
-        </a>
-      </div>
-    </section>
 
     <section class="work-sample anim-dark px-l">
       <div class="work-sample-container px-l">
@@ -104,21 +73,34 @@
       </div>
     </section>
 
-    <section class="youtube px-l">
-      <div class="container anim">
-        <h2 class="mb-title">Check us on <br />Youtube</h2>
-        <div class="info">
-          <p>
-            We recently started our youtube channel. We plan to post programming
-            and UI/UX tutorials.
-          </p>
-          <a
-            class="arrow-link"
-            href="https://www.youtube.com/channel/UC6IH7w-m-l-eaKTzyib-Rfg"
-            >Visit Our Channel
-            <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
-          /></a>
+    <section class="bio">
+      <div class="sahar anim">
+        <div class="container">
+          <div class="image">
+            <img src="@/assets/img/avatar/sahar.jpg" alt="Sahar Hatami" />
+          </div>
+          <div class="text">
+            <h2>
+              I’m Sahar,<br />UI<span class="text-primary-light">&</span>UX
+              <br class="hide-mobile" />
+              Designer
+            </h2>
+            <p>
+              Night owl. love travel, new challenges, meet friends and eat gummy
+              candies. Don’t like to have unfinished tasks.
+            </p>
+            <a class="arrow-link" href="/resume/SaharHatami.pdf" download=""
+              >My Resume
+              <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
+            /></a>
+          </div>
         </div>
+      </div>
+      <div class="container anim">
+        <a href="mailto:hi@webkar.xyz" class="cto">
+          Let’s talk about work
+          <img src="@/assets/img/icon/arrow-right.png" />
+        </a>
       </div>
     </section>
 
@@ -170,7 +152,7 @@ export default {
   },
   head() {
     return {
-      title: `Home - Webkar`,
+      title: `Home - Sahar Hatami`,
       meta: [
         {
           hid: "description",
@@ -327,19 +309,6 @@ header {
       }
     }
   }
-  .ali {
-    .container {
-      .image {
-        @media (min-width: 860px) {
-          top: 5rem;
-          left: 0;
-        }
-        img {
-          object-position: 40% 50%;
-        }
-      }
-    }
-  }
   .sahar {
     margin-top: 10rem;
     @media (max-width: 860px) {
@@ -356,26 +325,6 @@ header {
         align-items: flex-start;
         text-align: left;
       }
-    }
-  }
-}
-
-.work-info {
-  .how,
-  .what {
-    .container {
-      display: flex;
-      flex-direction: column;
-      p {
-        max-width: 36.5rem;
-      }
-    }
-  }
-  .how {
-    margin-bottom: 5rem;
-    .container {
-      align-items: flex-end;
-      text-align: right;
     }
   }
   .cto {
@@ -407,6 +356,26 @@ header {
       img {
         display: none;
       }
+    }
+  }
+}
+
+.work-info {
+  .how,
+  .what {
+    .container {
+      display: flex;
+      flex-direction: column;
+      p {
+        max-width: 36.5rem;
+      }
+    }
+  }
+  .how {
+    margin-bottom: 5rem;
+    .container {
+      align-items: flex-end;
+      text-align: right;
     }
   }
 
