@@ -14,9 +14,9 @@
       </div>
     </header>
 
-    <div class="container anim">
+    <div class="container">
       <div class="works-gallery">
-        <div class="tags">
+        <div class="tags anim">
           <button
             v-for="tag in tags"
             :key="tag.code"
@@ -29,7 +29,7 @@
         </div>
         <div class="gallery">
           <a
-            class="work"
+            class="work anim"
             v-for="work in works"
             :key="work.title"
             :href="work.link"

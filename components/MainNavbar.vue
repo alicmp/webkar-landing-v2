@@ -3,6 +3,8 @@
     <div class="container">
       <a class="title" href="/">Webkar</a>
       <ul class="links gap-md">
+        <li><nuxt-link exact to="/projects">projects</nuxt-link></li>
+        <li><nuxt-link exact to="/contacts">Contact</nuxt-link></li>
       </ul>
     </div>
   </nav>
@@ -42,24 +44,30 @@ export default {};
       display: flex;
       list-style-type: none;
       li {
-        button {
+        a {
+          font-weight: 400;
           display: inline-flex;
           align-items: center;
           cursor: pointer;
           border: none;
           background-color: transparent;
-          padding: 0 0.5rem;
           height: 60px;
           border-top: 6px solid transparent;
           border-bottom: 6px solid transparent;
-          color: var(--clr-primary);
-          font-size  : 14px;
+          color: var(--clr-text-primary-dark);
+          font-size: 14px;
         }
-        button:hover,
-        button:focus {
+        a:hover,
+        a:focus,
+        .active,
+        .nuxt-link-active,
+        .nuxt-link-exact-active {
           opacity: 1;
-          border-top: 6px solid var(--clr-secondary);
+          border-top: 6px solid var(--clr-text-primary-dark);
         }
+      }
+      & > * + * {
+        margin-left: 1rem;
       }
     }
   }
