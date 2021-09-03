@@ -28,17 +28,18 @@
           </button>
         </div>
         <div class="gallery">
-          <div
+          <a
             class="work"
             v-for="work in works"
             :key="work.title"
+            :href="work.link"
             :class="{
               show: work.tag == selectedTag || selectedTag == 'ALL',
             }"
           >
             <img :src="work.image" :alt="work.title" />
             <h4>{{ work.title }}</h4>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -88,21 +89,25 @@ export default {
           image: require("@/assets/img/works/1-interiorsolutions.jpg"),
           title: "Interior soloution",
           tag: "UIUX",
+          link: '/projects/interior-solution'
         },
         {
           image: require("@/assets/img/works/3-fitto.jpg"),
           title: "Fittoeco Tourisem",
           tag: "UIUX",
+          link: '/projects/fittoeco'
         },
         {
           image: require("@/assets/img/works/2-ddlock.jpg"),
           title: "DD-Lock",
           tag: "UIUX",
+          link: '/projects/ddlock'
         },
         {
           image: require("@/assets/img/works/6-kalaraad.jpg"),
           title: "Kala Raad",
           tag: "UIUX",
+          link: '/projects/kala-raad'
         },
       ],
     };

@@ -15,12 +15,12 @@
           class="arrow"
           src="@/assets/img/icon/arrow-down.png"
           alt=""
-          @click="scrollToElement('ali')"
+          @click="scrollToElement('works')"
         />
       </div>
     </header>
 
-    <section class="work-sample anim-dark px-l">
+    <section id="works" class="work-sample anim-dark px-l">
       <div class="work-sample-container px-l">
         <div class="lines">
           <hr />
@@ -31,7 +31,7 @@
         </div>
         <div class="container">
           <div class="sample-col col-1">
-            <div class="sample anim">
+            <a class="sample anim" href="/projects/interior-solutions">
               <h4>Interior Solutions</h4>
               <p>#UIUX #Wordpress</p>
               <div class="image-container">
@@ -40,8 +40,8 @@
                   alt="Interior Solutions Website"
                 />
               </div>
-            </div>
-            <div class="sample anim">
+            </a>
+            <a class="sample anim" href="/projects/fittoeco">
               <h4>Fittoeco Tourisem</h4>
               <p>#UIUX #ios #app</p>
               <div class="image-container">
@@ -50,25 +50,32 @@
                   alt="Fittoeco Tourisem"
                 />
               </div>
-            </div>
+            </a>
           </div>
           <div class="sample-col col-2">
             <h2 class="anim">Recent<br />Projects</h2>
-            <div class="sample anim">
+            <a class="sample anim" href="/projects/ddlock">
               <h4>DD-Lock</h4>
               <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
               <div class="image-container">
                 <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
               </div>
-            </div>
-            <div class="sample anim">
+            </a>
+            <a class="sample anim" href="/projects/kala-raad">
               <h4>Kala Raad</h4>
               <p>#UIUX #crm #Django #Nuxt.js</p>
               <div class="image-container">
                 <img src="@/assets/img/works/6-kalaraad.jpg" alt="Kala Raad" />
               </div>
-            </div>
+            </a>
           </div>
+        </div>
+
+        <div class="container anim">
+          <a href="/projects" class="border-btn">
+            See More
+            <img src="@/assets/img/icon/arrow-right.png" />
+          </a>
         </div>
       </div>
     </section>
@@ -97,7 +104,7 @@
         </div>
       </div>
       <div class="container anim">
-        <a href="mailto:hi@webkar.xyz" class="cto">
+        <a href="mailto:hi@webkar.xyz" class="border-btn">
           Let’s talk about work
           <img src="@/assets/img/icon/arrow-right.png" />
         </a>
@@ -323,36 +330,8 @@ header {
       }
     }
   }
-  .cto {
-    margin: auto;
+  .border-btn {
     margin-top: 9rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 44.68rem;
-    padding: 1.8rem 3rem;
-    color: var(--clr-text-primary-dark);
-    border: 1px solid #333333;
-    text-decoration: none;
-    transition: 100ms all ease-in;
-    @media (min-width: 860px) {
-      font-size: 2.3rem;
-    }
-    @media (max-width: 860px) {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      font-size: 1.4rem;
-      padding: 1rem 2rem;
-      margin-top: 6rem;
-      margin-bottom: 3rem;
-      background-color: var(--clr-text-primary-dark);
-      color: #fff;
-      img {
-        display: none;
-      }
-    }
   }
 }
 
@@ -414,6 +393,7 @@ header {
       }
       .sample-col {
         .sample {
+          display: block;
           margin-bottom: 9.75rem;
           @media (max-width: 860px) {
             margin-bottom: 3.75rem;
@@ -424,6 +404,7 @@ header {
           p {
             margin-bottom: 1.5rem;
             font-size: 1.25rem;
+            font-weight: 400;
             @media (max-width: 860px) {
               font-size: 1rem !important;
               margin-bottom: 1rem;
