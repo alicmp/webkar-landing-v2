@@ -93,22 +93,6 @@ article {
   position: relative;
   margin-top: 60px;
 }
-.lines {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  @media (max-width: 860px) {
-    display: none;
-  }
-  hr {
-    border: 0.5px solid #828282;
-    opacity: 0.1;
-  }
-}
 @media (min-width: 860px) {
   h2 {
     font-weight: 600;
@@ -131,11 +115,6 @@ article {
 }
 .pull-left {
   margin-right: auto;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 .image-gallery {
   display: grid;
