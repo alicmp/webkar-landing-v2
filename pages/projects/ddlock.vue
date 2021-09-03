@@ -9,10 +9,10 @@
     </div>
 
     <header>
-      <img src="@/assets/img/projects/ddlock/ddlock.jpg" alt="DD Lock" />
+      <img src="@/assets/img/projects/ddlock/ddlock.jpg" alt="DD Lock" class="anim" />
     </header>
 
-    <div class="container">
+    <div class="container anim">
       <div class="text pull-right">
         <h2>Webkar UI/UX Design</h2>
         <p>
@@ -24,14 +24,14 @@
       </div>
     </div>
 
-    <div class="full-width-image">
+    <div class="full-width-image anim">
       <img
         src="@/assets/img/projects/ddlock/ddlock-2.jpg"
         alt="DD-Lock Design"
       />
     </div>
 
-    <div class="container">
+    <div class="container anim">
       <div class="text pull-left">
         <h2>Webkar UI/UX Design</h2>
         <p>
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container anim">
       <div class="image-gallery">
         <img
           src="@/assets/img/projects/ddlock/ddlock-logo.jpg"
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container anim">
       <div class="text pull-right">
         <h2>Webkar UI/UX Design</h2>
         <p>
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container anim">
       <img
         src="@/assets/img/projects/ddlock/ddlock-design-library.jpg"
         alt="DD Lock Design Library"
@@ -85,7 +85,10 @@
 </template>
 
 <script>
-export default {};
+import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
+export default {
+  mixins: [animateOnScrollMixin],
+};
 </script>
 
 <style lang="scss" scoped>

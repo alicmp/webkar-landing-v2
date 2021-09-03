@@ -8,13 +8,13 @@
       <hr />
     </div>
 
-    <header>
+    <header class="anim">
       <div class="container">
         <h1>Works</h1>
       </div>
     </header>
 
-    <div class="container">
+    <div class="container anim">
       <div class="works-gallery">
         <div class="tags">
           <button
@@ -44,8 +44,8 @@
       </div>
     </div>
 
-    <div class="container">
-      <a href="mailto:hi@webkar.xyz" class="cto">
+    <div class="container anim">
+      <a href="mailto:hi@webkar.xyz" class="border-btn">
         Let’s talk about work
         <img src="@/assets/img/icon/arrow-right.png" />
       </a>
@@ -54,7 +54,10 @@
 </template>
 
 <script>
+import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
+
 export default {
+  mixins: [animateOnScrollMixin],
   data() {
     return {
       selectedTag: "ALL",
@@ -89,25 +92,25 @@ export default {
           image: require("@/assets/img/works/1-interiorsolutions.jpg"),
           title: "Interior soloution",
           tag: "UIUX",
-          link: '/projects/interior-solution'
+          link: "/projects/interior-solution",
         },
         {
           image: require("@/assets/img/works/3-fitto.jpg"),
           title: "Fittoeco Tourisem",
           tag: "UIUX",
-          link: '/projects/fittoeco'
+          link: "/projects/fittoeco",
         },
         {
           image: require("@/assets/img/works/2-ddlock.jpg"),
           title: "DD-Lock",
           tag: "UIUX",
-          link: '/projects/ddlock'
+          link: "/projects/ddlock",
         },
         {
           image: require("@/assets/img/works/6-kalaraad.jpg"),
           title: "Kala Raad",
           tag: "UIUX",
-          link: '/projects/kala-raad'
+          link: "/projects/kala-raad",
         },
       ],
     };
@@ -170,7 +173,8 @@ header {
         border-radius: 10px;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         &::-webkit-scrollbar-thumb {
           background: #ccc;
         }
@@ -227,36 +231,7 @@ header {
     }
   }
 }
-.cto {
-  margin: auto;
-  margin-top: 9rem;
-  margin-bottom: 9rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 44.68rem;
-  padding: 1.8rem 3rem;
-  color: var(--clr-text-primary-dark);
-  border: 1px solid #333333;
-  text-decoration: none;
-  transition: 100ms all ease-in;
-  @media (min-width: 860px) {
-    font-size: 2.3rem;
-  }
-  @media (max-width: 860px) {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    background-color: var(--clr-text-primary-dark);
-    color: #fff;
-    img {
-      display: none;
-    }
-  }
+.border-btn {
+  margin-top: 8rem;
 }
 </style>

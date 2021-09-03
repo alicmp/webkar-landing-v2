@@ -497,6 +497,7 @@ header {
 }
 
 .back-to-top {
+  margin-bottom: -10rem;
   padding: 0;
   button {
     border: none;

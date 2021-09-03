@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
+  margin-top: 10rem;
   background-color: #e5e5e5;
   .container {
     padding: 2rem 0;
