@@ -212,7 +212,7 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "We are a team of two freelancers. Whether you want a landing page or web app, We design (UI/UX) and develop (Django/Vue.js) your ideas and make them reality.",
+            "I design (UI/UX) your ideas and make them reality.",
         },
       ],
     };

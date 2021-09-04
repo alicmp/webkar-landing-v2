@@ -78,6 +78,19 @@
 import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
 export default {
   mixins: [animateOnScrollMixin],
+  head() {
+    return {
+      title: `Projects - DD Lock - Sahar Hatami`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "I design (UI/UX) your ideas and make them reality.",
+        },
+      ],
+    };
+  },
 };
 </script>
 

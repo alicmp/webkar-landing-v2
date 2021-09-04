@@ -107,10 +107,23 @@ export default {
           link: "/projects/ddlock",
         },
         {
-          image: require("@/assets/img/works/6-kalaraad.jpg"),
-          title: "Kala Raad",
+          image: require("@/assets/img/works/webkaar.png"),
+          title: "Webkaar",
           tag: "UIUX",
-          link: "/projects/kala-raad",
+          link: "/projects/webkaar",
+        },
+      ],
+    };
+  },
+  head() {
+    return {
+      title: `Projects - Sahar Hatami`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "I design (UI/UX) your ideas and make them reality.",
         },
       ],
     };
@@ -203,7 +216,7 @@ header {
   }
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     gap: 2rem;
     @media (min-width: 680px) {
       row-gap: 4rem;
