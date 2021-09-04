@@ -8,8 +8,9 @@
         </h1>
         <hr />
         <p>
-          We create products and services that improve the daily lives of
-          humans.
+          I design memorable digital experiences AND help customers create
+          minimal solutions that improve the daily lives of humans by being ever
+          more unique, creative, and sustainable.
         </p>
         <img
           class="arrow"
@@ -33,7 +34,6 @@
           <div class="sample-col col-1">
             <a class="sample anim" href="/projects/interior-solutions">
               <h4>Interior Solutions</h4>
-              <p>#UIUX #Wordpress</p>
               <div class="image-container">
                 <img
                   src="@/assets/img/works/1-interiorsolutions.jpg"
@@ -43,7 +43,6 @@
             </a>
             <a class="sample anim" href="/projects/fittoeco">
               <h4>Fittoeco Tourisem</h4>
-              <p>#UIUX #ios #app</p>
               <div class="image-container">
                 <img
                   src="@/assets/img/works/3-fitto.jpg"
@@ -56,16 +55,14 @@
             <h2 class="anim">Recent<br />Projects</h2>
             <a class="sample anim" href="/projects/ddlock">
               <h4>DD-Lock</h4>
-              <p>#UIUX #Ecommerce #Django #Nuxt.js</p>
               <div class="image-container">
                 <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
               </div>
             </a>
-            <a class="sample anim" href="/projects/kala-raad">
-              <h4>Kala Raad</h4>
-              <p>#UIUX #crm #Django #Nuxt.js</p>
+            <a class="sample anim" href="/projects/webkaar">
+              <h4>Webkaar</h4>
               <div class="image-container">
-                <img src="@/assets/img/works/6-kalaraad.jpg" alt="Kala Raad" />
+                <img src="@/assets/img/works/webkaar.png" alt="Webkaar" />
               </div>
             </a>
           </div>
@@ -89,23 +86,46 @@
           <div class="text">
             <h2>
               I’m Sahar,<br />UI<span class="text-primary-light">&</span>UX
-              <br class="hide-mobile" />
               Designer
             </h2>
-            <p>
-              Night owl. love travel, new challenges, meet friends and eat gummy
-              candies. Don’t like to have unfinished tasks.
-            </p>
-            <a class="arrow-link" href="/resume/SaharHatami.pdf" download=""
-              >My Resume
-              <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
-            /></a>
+            <div class="story">
+              <h3>My Story</h3>
+              <p>
+                I’m a UX/UI Designer at Webkar Studio. I’ve been designing
+                things for the last eight years and I’ve had the opportunity to
+                work with various clients. Over the years, I learned that the
+                best user experiences lead to great business outcomes. I try to
+                reach these goals each time: making my work as accessible,
+                pleasant, and inclusive as possible, learning from my past
+                experiences to build better things. Outside of my job I love to
+                read, see exhibitions, travel, climb mountains and meet people.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="resume px-xl anim">
+      <div class="container">
+        <h3>All Works</h3>
+        <table>
+          <tbody>
+            <tr v-for="res in resume" :key="res.company">
+              <td class="year">{{ res.year }}</td>
+              <td class="company">{{ res.company }}</td>
+              <td class="position">{{ res.position }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a class="arrow-link" href="/resume/SaharHatami.pdf" download=""
+          >Download My Resume
+          <img src="@/assets/img/icon/arrow-right-sm.svg" alt="arrow right"
+        /></a>
+      </div>
       <div class="container anim">
         <a href="mailto:hi@webkar.xyz" class="border-btn">
-          Let’s talk about work
+          Let’s talk about you
           <img src="@/assets/img/icon/arrow-right.png" />
         </a>
       </div>
@@ -144,6 +164,37 @@
 import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
 export default {
   mixins: [animateOnScrollMixin],
+  data() {
+    return {
+      resume: [
+        {
+          year: "2020",
+          company: "Webkaar Studio",
+          position: "UX/UI Designer",
+        },
+        {
+          year: "2018",
+          company: "Tavvandad Company",
+          position: "UX/UI and Graphic Designer",
+        },
+        {
+          year: "2017",
+          company: "Salimi Studio",
+          position: "Graphic Designer",
+        },
+        {
+          year: "2015",
+          company: "Shole Print house",
+          position: "Graphic Designer",
+        },
+        {
+          year: "2014",
+          company: "Ara Clinic",
+          position: "Marketing Consultant and Graphic Designer",
+        },
+      ],
+    };
+  },
   methods: {
     scrollToElement(id) {
       let el = document.getElementById(id);
@@ -293,7 +344,8 @@ header {
         align-items: flex-end;
         text-align: right;
         h2 {
-          max-width: 60rem;
+          max-width: 65rem;
+          margin-top: 6rem;
           -webkit-text-stroke: 4px var(--clr-text-primary-dark);
           @media (max-width: 860px) {
             -webkit-text-stroke: 2px var(--clr-text-primary-dark);
@@ -303,10 +355,13 @@ header {
           }
           -webkit-text-fill-color: #fff;
         }
-        p {
-          max-width: 29.3rem;
+        .story {
+          max-width: 38.3rem;
           @media (min-width: 860px) {
             margin-top: 10.5rem;
+          }
+          h3 {
+            margin-bottom: 1.5rem;
           }
         }
       }
@@ -329,6 +384,36 @@ header {
         text-align: left;
       }
     }
+  }
+}
+
+.resume {
+  h3 {
+    margin-bottom: 1.5rem;
+  }
+  table {
+    border-collapse: collapse;
+    tr {
+      border-bottom: 3px solid var(--clr-text-primary-dark);
+      @media (max-width: 860px) {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 0;
+      }
+      @media (min-width: 860px) {
+        height: 6.5rem;
+        .year {
+          width: 9rem;
+        }
+        .company {
+          width: 24.9rem;
+        }
+      }
+    }
+  }
+  .arrow-link {
+    margin-top: 2rem;
+    max-width: max-content;
   }
   .border-btn {
     margin-top: 9rem;
@@ -400,6 +485,7 @@ header {
           }
           h4 {
             font-size: 1.75rem;
+            margin-bottom: 1.5rem;
           }
           p {
             margin-bottom: 1.5rem;

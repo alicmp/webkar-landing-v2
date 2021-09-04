@@ -9,12 +9,12 @@
     </div>
 
     <header>
-      <img src="@/assets/img/projects/ddlock/ddlock.jpg" alt="DD Lock" class="anim" />
+      <img src="@/assets/img/projects/ddlock/ddlock.jpg" alt="DD Lock" class="anim large-image" />
     </header>
 
     <div class="container anim">
       <div class="text pull-right">
-        <h2>Webkar UI/UX Design</h2>
+        <h3>Webkar UI/UX Design</h3>
         <p>
           When the project began, the solution already existed. Now, my role as
           a designer was to work backgrounds to find the right problem for the
@@ -28,12 +28,13 @@
       <img
         src="@/assets/img/projects/ddlock/ddlock-2.jpg"
         alt="DD-Lock Design"
+        class="large-image"
       />
     </div>
 
     <div class="container anim">
       <div class="text pull-left">
-        <h2>Webkar UI/UX Design</h2>
+        <h3>Webkar UI/UX Design</h3>
         <p>
           When the project began, the solution already existed. Now, my role as
           a designer was to work backgrounds to find the right problem for the
@@ -58,14 +59,14 @@
         <img
           src="@/assets/img/projects/ddlock/ddlock-3.jpg"
           alt="DD Lock design"
-          class="item-3"
+          class="item-3 large-image"
         />
       </div>
     </div>
 
     <div class="container anim">
       <div class="text pull-right">
-        <h2>Webkar UI/UX Design</h2>
+        <h3>Webkar UI/UX Design</h3>
         <p>
           When the project began, the solution already existed. Now, my role as
           a designer was to work backgrounds to find the right problem for the
@@ -97,7 +98,7 @@ article {
   margin-top: 60px;
 }
 @media (min-width: 860px) {
-  h2 {
+  h3 {
     font-weight: 600;
     font-size: 52px;
     line-height: 94px;
@@ -121,8 +122,9 @@ article {
 }
 .image-gallery {
   display: grid;
-  gap: 3.5rem;
+  gap: 1rem;
   @media (min-width: 860px) {
+    gap: 3.5rem;
     .item-1 {
       grid-column-start: 1;
       grid-column-end: 2;
@@ -136,5 +138,8 @@ article {
       grid-column-end: 3;
     }
   }
+}
+.large-image {
+  min-height: 30vh;
 }
 </style>

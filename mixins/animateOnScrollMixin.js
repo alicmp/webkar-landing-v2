@@ -12,7 +12,7 @@ export default {
       (entries, animateOnScrollObserver) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animation = `anim1 2s forwards ease`;
+            entry.target.style.animation = `anim1 1.5s forwards ease-in`;
             animateOnScrollObserver.unobserve(entry.target);
           } else {
             entry.target.style.animation = "none";

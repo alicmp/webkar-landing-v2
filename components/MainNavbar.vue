@@ -1,10 +1,10 @@
 <template>
   <nav class="main-nav">
     <div class="container">
-      <a class="title" href="/">Webkar</a>
+      <a class="title" href="/">Sahar Hatami</a>
       <ul class="links gap-md">
         <li><nuxt-link exact to="/projects">projects</nuxt-link></li>
-        <li><nuxt-link exact to="/contacts">Contact</nuxt-link></li>
+        <li><nuxt-link exact to="/contact">Contact</nuxt-link></li>
       </ul>
     </div>
   </nav>
