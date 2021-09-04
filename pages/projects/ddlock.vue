@@ -9,17 +9,22 @@
     </div>
 
     <header>
-      <img src="@/assets/img/projects/ddlock/ddlock.jpg" alt="DD Lock" class="anim large-image" />
+      <img
+        src="@/assets/img/projects/ddlock/ddlock.jpg"
+        alt="DD Lock"
+        class="anim large-image"
+      />
     </header>
 
     <div class="container anim">
       <div class="text pull-right">
-        <h3>Webkar UI/UX Design</h3>
+        <h3>DD Lock</h3>
         <p>
-          When the project began, the solution already existed. Now, my role as
-          a designer was to work backgrounds to find the right problem for the
-          solution. The intern team was tasked with creating a demo that could
-          be showcased to clients to invoke new ideas in their heads.
+          DD-lock is a company that sells all things related to smart homes,
+          such as smart locks and remote monitoring systems. I built sharp
+          interfaces and interactive experiences for their e-commerce website. I
+          chose black and blue colors for designing the website to convey the
+          feeling of luxury and safety.
         </p>
       </div>
     </div>
@@ -34,53 +39,37 @@
 
     <div class="container anim">
       <div class="text pull-left">
-        <h3>Webkar UI/UX Design</h3>
         <p>
-          When the project began, the solution already existed. Now, my role as
-          a designer was to work backgrounds to find the right problem for the
-          solution. The intern team was tasked with creating a demo that could
-          be showcased to clients to invoke new ideas in their heads.
+          For designing the logo I combined three elements: 1- fingerprint,
+          which represents smart door locks. 2- lock Icon. 3- DD that is the
+          beginning of their brand name (DD Lock)
         </p>
       </div>
     </div>
 
-    <div class="container anim">
+    <div class="container">
       <div class="image-gallery">
         <img
-          src="@/assets/img/projects/ddlock/ddlock-logo.jpg"
-          alt="DD Lock Logo"
-          class="item-1"
-        />
-        <img
-          src="@/assets/img/projects/ddlock/ddlock-mobile.jpg"
-          alt="DD Lock Mobile Design"
-          class="item-2"
-        />
+        src="@/assets/img/projects/ddlock/ddlock-mobile.jpg"
+        alt="DD Lock Mobile Design"
+        class="item-1 large-image anim"
+      />
         <img
           src="@/assets/img/projects/ddlock/ddlock-3.jpg"
           alt="DD Lock design"
-          class="item-3 large-image"
+          class="item-1 large-image anim"
+        />
+        <img
+          src="@/assets/img/projects/ddlock/ddlock-logo.jpg"
+          alt="DD Lock Logo"
+          class="item-2 anim"
+        />
+        <img
+          src="@/assets/img/projects/ddlock/ddlock-design-library.jpg"
+          alt="DD Lock Design Library"
+          class="item-3 anim"
         />
       </div>
-    </div>
-
-    <div class="container anim">
-      <div class="text pull-right">
-        <h3>Webkar UI/UX Design</h3>
-        <p>
-          When the project began, the solution already existed. Now, my role as
-          a designer was to work backgrounds to find the right problem for the
-          solution. The intern team was tasked with creating a demo that could
-          be showcased to clients to invoke new ideas in their heads.
-        </p>
-      </div>
-    </div>
-
-    <div class="container anim">
-      <img
-        src="@/assets/img/projects/ddlock/ddlock-design-library.jpg"
-        alt="DD Lock Design Library"
-      />
     </div>
   </article>
 </template>
@@ -106,9 +95,9 @@ article {
 }
 .text {
   max-width: 838px;
-  padding: 14.43rem 0 21.37rem 0;
+  padding: 10.43rem 0 15.37rem 0;
   @media (max-width: 860px) {
-    padding: 4rem 0 3rem 0;
+    padding: 3rem 0 2.5rem 0;
   }
   p {
     margin-top: 1.5rem;
@@ -127,14 +116,14 @@ article {
     gap: 3.5rem;
     .item-1 {
       grid-column-start: 1;
-      grid-column-end: 2;
-    }
-    .item-2 {
-      grid-column-start: 2;
       grid-column-end: 3;
     }
-    .item-3 {
+    .item-2 {
       grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    .item-3 {
+      grid-column-start: 2;
       grid-column-end: 3;
     }
   }
