@@ -130,33 +130,6 @@
         </a>
       </div>
     </section>
-
-    <section class="contact px-l">
-      <div class="container anim">
-        <h3 class="mb-title">Contact</h3>
-        <div class="text">
-          <p>
-            If you want to get in touch or if want to know more, please contact
-            us <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
-          </p>
-        </div>
-        <div class="socials">
-          <a href="https://linkedin.com/company/webkar"
-            ><img src="@/assets/img/icon/in.png" alt="webkar's linkedin"
-          /></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="back-to-top">
-      <button @click="scrollToElement('header')">
-        <img class="mobile-hidden" src="@/assets/img/icon/arrow-up.png" />
-        <img src="@/assets/img/icon/arrow-up.png" />
-        Back to the Top
-        <img src="@/assets/img/icon/arrow-up.png" />
-        <img class="mobile-hidden" src="@/assets/img/icon/arrow-up.png" />
-      </button>
-    </section>
   </div>
 </template>
 
@@ -194,15 +167,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    scrollToElement(id) {
-      let el = document.getElementById(id);
-
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    },
   },
   head() {
     return {
@@ -552,59 +516,6 @@ header {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-      }
-    }
-  }
-}
-
-.contact {
-  .container {
-    display: flex;
-    @media (max-width: 860px) {
-      flex-direction: column;
-      h3 {
-        font-size: 3.1rem;
-        line-height: 5.25rem;
-      }
-    }
-    .text {
-      width: 100%;
-      @media (min-width: 860px) {
-        padding: 0 8rem;
-      }
-      p {
-        max-width: 36.5rem;
-      }
-    }
-    .socials {
-      margin-top: 1.5rem;
-    }
-  }
-}
-
-.back-to-top {
-  margin-bottom: -10rem;
-  padding: 0;
-  button {
-    border: none;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    height: 25.25rem;
-    background-color: var(--clr-text-primary-dark);
-    color: #fff;
-    font-size: 7.5rem;
-    img {
-      animation: moveUp 500ms alternate-reverse infinite ease;
-    }
-    @media (max-width: 860px) {
-      height: 12.25rem;
-      font-size: 2rem;
-      img {
-        height: 2rem;
-      }
-      .mobile-hidden {
-        display: none;
       }
     }
   }
