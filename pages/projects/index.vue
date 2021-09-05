@@ -46,7 +46,7 @@
 
     <div class="container anim">
       <a href="mailto:hi@webkar.xyz" class="border-btn">
-        Let’s talk about work
+        Let’s talk about you
         <img src="@/assets/img/icon/arrow-right.png" />
       </a>
     </div>
@@ -216,7 +216,7 @@ header {
   }
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 2rem;
     @media (min-width: 680px) {
       row-gap: 4rem;
@@ -245,6 +245,6 @@ header {
   }
 }
 .border-btn {
-  margin-top: 8rem;
+  margin-top: 10rem;
 }
 </style>

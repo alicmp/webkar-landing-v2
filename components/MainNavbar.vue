@@ -1,7 +1,7 @@
 <template>
   <nav class="main-nav">
     <div class="container">
-      <a class="title" href="/">Sahar Hatami</a>
+      <a class="title" href="/">Sahar H.</a>
       <ul class="links gap-md">
         <li><nuxt-link exact to="/projects">projects</nuxt-link></li>
         <li><nuxt-link exact to="/contact">Contact</nuxt-link></li>
@@ -54,7 +54,7 @@ export default {};
           height: 60px;
           border-top: 6px solid transparent;
           border-bottom: 6px solid transparent;
-          color: var(--clr-text-primary-dark);
+          color: var(--text-dark);
           font-size: 14px;
         }
         a:hover,
