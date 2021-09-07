@@ -3,7 +3,7 @@
     <div class="container">
       <h2>Contact</h2>
       <p>
-        I am open to new work opportunities, so please<br class="hide-mobile"> feel free to reach out.
+        Always keen for a good proposition<br class="hide-mobile"> so feel free to reach out!
       </p>
       <a class="arrow-link" href="/resume/SaharHatami.pdf"
         >Email
