@@ -216,9 +216,9 @@ header {
   }
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 2rem;
     @media (min-width: 680px) {
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
       row-gap: 4rem;
     }
     .work {
