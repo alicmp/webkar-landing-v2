@@ -32,7 +32,7 @@
         </div>
         <div class="container">
           <div class="sample-col col-1">
-            <a class="sample anim" href="/projects/interior-solutions">
+            <a class="sample anim" href="/projects/interior-solution">
               <h4>Interior Solutions</h4>
               <div class="image-container">
                 <img
