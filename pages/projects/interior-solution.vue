@@ -69,7 +69,7 @@ export default {
   mixins: [animateOnScrollMixin],
   head() {
     return {
-      title: `Projects - Interior Solution - Sahar Hatami`,
+      title: `Interior Solution - Projects - Sahar Hatami`,
       meta: [
         {
           hid: "description",

@@ -31,7 +31,7 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "I design (UI/UX) your ideas and make them reality.",
+            "You can find my email and linkedin address here.",
         },
       ],
     };

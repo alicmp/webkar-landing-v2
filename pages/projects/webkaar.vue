@@ -85,7 +85,7 @@ export default {
   mixins: [animateOnScrollMixin],
   head() {
     return {
-      title: `Projects - Webkaar - Sahar Hatami`,
+      title: `Webkaar - Projects - Sahar Hatami`,
       meta: [
         {
           hid: "description",

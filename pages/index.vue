@@ -4,7 +4,7 @@
       <div class="container">
         <h1>
           Hi, I'm Sahar <br />
-          UI/UX Designer
+          UX/UI Designer
         </h1>
         <hr />
         <p>
@@ -179,12 +179,12 @@ export default {
   },
   head() {
     return {
-      title: `Home - Sahar Hatami`,
+      title: `Sahar Hatami - UX/UI Designer`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "I design (UI/UX) your ideas and make them reality.",
+          content: "I design (UX/UI) your ideas and make them reality.",
         },
       ],
     };

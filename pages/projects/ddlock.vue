@@ -80,7 +80,7 @@ export default {
   mixins: [animateOnScrollMixin],
   head() {
     return {
-      title: `Projects - DD Lock - Sahar Hatami`,
+      title: `DD Lock - Projects - Sahar Hatami`,
       meta: [
         {
           hid: "description",
