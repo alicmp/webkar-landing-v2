@@ -41,7 +41,7 @@
                 />
               </div>
             </a>
-            <a class="sample anim" href="/projects/fittoeco">
+            <a class="sample anim fitto">
               <h4>Fittoeco Tourisem</h4>
               <div class="image-container">
                 <img
@@ -124,7 +124,7 @@
         /></a>
       </div>
       <div class="container anim">
-        <a href="mailto:hi@webkar.xyz" class="border-btn">
+        <a href="mailto:sahar@webkar.xyz" class="border-btn">
           Let’s talk about you
           <img src="@/assets/img/icon/arrow-right.png" />
         </a>
@@ -168,6 +168,15 @@ export default {
       ],
     };
   },
+  methods: {
+    scrollToElement(id) {
+      let el = document.getElementById(id);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  },
   head() {
     return {
       title: `Home - Sahar Hatami`,
@@ -175,8 +184,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content:
-            "I design (UI/UX) your ideas and make them reality.",
+          content: "I design (UI/UX) your ideas and make them reality.",
         },
       ],
     };

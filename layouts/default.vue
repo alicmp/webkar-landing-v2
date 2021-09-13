@@ -8,12 +8,12 @@
         <div class="text">
           <p>
             If you want to get in touch or if want to know more, please contact
-            us <a href="mailto:hi@webkar.xyz">hi@webkar.xyz</a>
+            us <a href="mailto:sahar@webkar.xyz">sahar@webkar.xyz</a>
           </p>
         </div>
         <div class="socials">
-          <a href="https://linkedin.com/company/webkar"
-            ><img src="@/assets/img/icon/in.png" alt="webkar's linkedin"
+          <a href="https://www.linkedin.com/in/sahar-hatami/"
+            ><img src="@/assets/img/icon/in.png" alt="sahar's linkedin"
           /></a>
         </div>
       </div>

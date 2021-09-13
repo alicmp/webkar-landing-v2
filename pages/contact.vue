@@ -5,11 +5,11 @@
       <p>
         Always keen for a good proposition<br class="hide-mobile"> so feel free to reach out!
       </p>
-      <a class="arrow-link" href="/resume/SaharHatami.pdf"
+      <a class="arrow-link" href="mailto:sahar@webkar.xyz"
         >Email
         <img src="@/assets/img/icon/arrow-right-sm-white.svg" alt="arrow right"
       /></a>
-      <a class="arrow-link" href="/resume/SaharHatami.pdf"
+      <a class="arrow-link" href="https://www.linkedin.com/in/sahar-hatami/"
         >LinkedIn
         <img src="@/assets/img/icon/arrow-right-sm-white.svg" alt="arrow right"
       /></a>

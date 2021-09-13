@@ -35,6 +35,7 @@
             :href="work.link"
             :class="{
               show: work.tag == selectedTag || selectedTag == 'ALL',
+              fitto: work.title == 'Fittoeco Tourisem',
             }"
           >
             <img :src="work.image" :alt="work.title" />
@@ -98,7 +99,7 @@ export default {
           image: require("@/assets/img/works/3-fitto.jpg"),
           title: "Fittoeco Tourisem",
           tag: "UIUX",
-          link: "/projects/fittoeco",
+          link: "javascript:void(0)",
         },
         {
           image: require("@/assets/img/works/2-ddlock.jpg"),
