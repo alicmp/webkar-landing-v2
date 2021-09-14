@@ -90,7 +90,7 @@ export default {
       ],
       works: [
         {
-          image: require("@/assets/img/works/webkaar.png"),
+          image: require("@/assets/img/works/6-webkar.jpg"),
           title: "Webkaar",
           tag: "UIUX",
           link: "/projects/webkaar",
