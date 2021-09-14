@@ -32,21 +32,18 @@
         </div>
         <div class="container">
           <div class="sample-col col-1">
+            <a class="sample anim" href="/projects/webkaar">
+              <h4>Webkaar</h4>
+              <div class="image-container">
+                <img src="@/assets/img/works/webkaar.png" alt="Webkaar" />
+              </div>
+            </a>
             <a class="sample anim" href="/projects/interior-solution">
               <h4>Interior Solutions</h4>
               <div class="image-container">
                 <img
                   src="@/assets/img/works/1-interiorsolutions.jpg"
                   alt="Interior Solutions Website"
-                />
-              </div>
-            </a>
-            <a class="sample anim fitto">
-              <h4>Fittoeco Tourisem</h4>
-              <div class="image-container">
-                <img
-                  src="@/assets/img/works/3-fitto.jpg"
-                  alt="Fittoeco Tourisem"
                 />
               </div>
             </a>
@@ -59,10 +56,13 @@
                 <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
               </div>
             </a>
-            <a class="sample anim" href="/projects/webkaar">
-              <h4>Webkaar</h4>
+            <a class="sample anim fitto">
+              <h4>Fittoeco Tourisem</h4>
               <div class="image-container">
-                <img src="@/assets/img/works/webkaar.png" alt="Webkaar" />
+                <img
+                  src="@/assets/img/works/3-fitto.jpg"
+                  alt="Fittoeco Tourisem"
+                />
               </div>
             </a>
           </div>

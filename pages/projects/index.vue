@@ -90,6 +90,12 @@ export default {
       ],
       works: [
         {
+          image: require("@/assets/img/works/webkaar.png"),
+          title: "Webkaar",
+          tag: "UIUX",
+          link: "/projects/webkaar",
+        },
+        {
           image: require("@/assets/img/works/1-interiorsolutions.jpg"),
           title: "Interior soloution",
           tag: "UIUX",
@@ -106,12 +112,6 @@ export default {
           title: "DD-Lock",
           tag: "UIUX",
           link: "/projects/ddlock",
-        },
-        {
-          image: require("@/assets/img/works/webkaar.png"),
-          title: "Webkaar",
-          tag: "UIUX",
-          link: "/projects/webkaar",
         },
       ],
     };
