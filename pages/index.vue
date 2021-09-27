@@ -56,7 +56,7 @@
                 <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
               </div>
             </a>
-            <a class="sample anim fitto">
+            <a class="sample anim" href="/projects/fitto-eco">
               <h4>Fittoeco Tourisem</h4>
               <div class="image-container">
                 <img
