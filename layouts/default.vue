@@ -8,7 +8,7 @@
         <div class="text">
           <p>
             If you want to get in touch or if want to know more, please contact
-            us <a href="mailto:sahar@webkar.xyz">sahar@webkar.xyz</a>
+            us <a href="mailto:hatami.sahar.91@gmail.com">hatami.sahar.91@gmail.com</a>
           </p>
         </div>
         <div class="socials">

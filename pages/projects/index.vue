@@ -45,7 +45,7 @@
     </div>
 
     <div class="container anim">
-      <a href="mailto:hi@webkar.xyz" class="border-btn">
+      <a href="mailto:hatami.sahar.91@gmail.com" class="border-btn">
         Let’s talk about you
         <img src="@/assets/img/icon/arrow-right.png" />
       </a>

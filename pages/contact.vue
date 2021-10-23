@@ -5,7 +5,7 @@
       <p>
         Always keen for a good proposition<br class="hide-mobile"> so feel free to reach out!
       </p>
-      <a class="arrow-link" href="mailto:sahar@webkar.xyz"
+      <a class="arrow-link" href="mailto:hatami.sahar.91@gmail.com"
         >Email
         <img src="@/assets/img/icon/arrow-right-sm-white.svg" alt="arrow right"
       /></a>
