@@ -21,57 +21,28 @@
       </div>
     </header>
 
-    <section id="works" class="work-sample anim-dark px-l">
-      <div class="work-sample-container px-l">
-        <div class="lines">
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-        </div>
-        <div class="container">
-          <div class="sample-col col-1">
-            <a class="sample anim" href="/projects/webkaar">
-              <h4>Webkaar</h4>
-              <div class="image-container">
-                <img src="@/assets/img/works/webkaar.png" alt="Webkaar" />
-              </div>
-            </a>
-            <a class="sample anim" href="/projects/interior-solution">
-              <h4>Interior Solutions</h4>
-              <div class="image-container">
-                <img
-                  src="@/assets/img/works/1-interiorsolutions.jpg"
-                  alt="Interior Solutions Website"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="sample-col col-2">
-            <h2 class="anim">Recent<br />Projects</h2>
-            <a class="sample anim" href="/projects/ddlock">
-              <h4>DD-Lock</h4>
-              <div class="image-container">
-                <img src="@/assets/img/works/2-ddlock.jpg" alt="DD-Lock" />
-              </div>
-            </a>
-            <a class="sample anim" href="/projects/fitto-eco">
-              <h4>Fittoeco Tourisem</h4>
-              <div class="image-container">
-                <img
-                  src="@/assets/img/works/3-fitto.jpg"
-                  alt="Fittoeco Tourisem"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
+    <CaseStudy />
 
-        <div class="container anim">
-          <a href="/projects" class="border-btn">
-            See More
-            <img src="@/assets/img/icon/arrow-right.png" />
+    <section class="gallery">
+      <h2>GALLERY</h2>
+      <div class="lines">
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+      </div>
+      <div class="container">
+        <div class="items">
+          <a
+            v-for="item in gallery"
+            :key="item.title"
+            :href="item.link"
+            class="item"
+            :class="{ shift: item.is_shifted }"
+          >
+            <img :src="item.image" :alt="item.title" />
+            <p class="title">{{ item.title }}</p>
           </a>
         </div>
       </div>
@@ -135,8 +106,12 @@
 
 <script>
 import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
+import CaseStudyComponent from "@/components/CaseStudy";
 export default {
   mixins: [animateOnScrollMixin],
+  components: {
+    CaseStudyComponent,
+  },
   data() {
     return {
       resume: [
@@ -164,6 +139,32 @@ export default {
           year: "2014",
           company: "Ara Clinic",
           position: "Marketing Consultant and Graphic Designer",
+        },
+      ],
+      gallery: [
+        {
+          title: "Logo Design",
+          image: require("@/assets/img/landing/logo.jpg"),
+          link: "gallery?category=logo",
+          is_shifted: false,
+        },
+        {
+          title: "Illustration",
+          image: require("@/assets/img/landing/illustration.jpg"),
+          link: "gallery?category=illustration",
+          is_shifted: true,
+        },
+        {
+          title: "Icongraphy",
+          image: require("@/assets/img/landing/icongraphy.jpg"),
+          link: "gallery?category=icongraphy",
+          is_shifted: false,
+        },
+        {
+          title: "Animation",
+          image: require("@/assets/img/landing/animation.jpg"),
+          link: "gallery?category=animation",
+          is_shifted: true,
         },
       ],
     };
@@ -264,6 +265,66 @@ header {
     cursor: pointer;
     transition: 100ms all;
     animation: moveDown 500ms alternate-reverse infinite ease;
+  }
+}
+
+.gallery {
+  background-color: #f3f4f6;
+  position: relative;
+  .lines {
+    z-index: 5;
+  }
+  h2 {
+    @media (min-width: 1440px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 22.375rem;
+      line-height: 70%;
+      color: rgba(189, 189, 189, 0.1);
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 6;
+    padding: 14.87rem 0 19.375rem 0;
+    .items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+      gap: 2rem;
+      @media (min-width: 1440px) {
+        .shift {
+          margin-top: -4rem;
+          height: calc(100% - 4rem);
+        }
+      }
+      .item {
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        p {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(57, 32, 32, 0.8);
+          color: #fff;
+          position: absolute;
+          top: 0;
+          z-index: 7;
+          transition: 100ms ease-in;
+        }
+        img {
+          z-index: 6;
+        }
+      }
+      .item:hover {
+        p {
+          background-color: rgba(57, 32, 32, 0.6);
+        }
+      }
+    }
   }
 }
 
@@ -389,143 +450,6 @@ header {
   }
   .border-btn {
     margin-top: 9rem;
-  }
-}
-
-.work-info {
-  .how,
-  .what {
-    .container {
-      display: flex;
-      flex-direction: column;
-      p {
-        max-width: 36.5rem;
-      }
-    }
-  }
-  .how {
-    margin-bottom: 5rem;
-    .container {
-      align-items: flex-end;
-      text-align: right;
-    }
-  }
-
-  .cto:hover {
-    background-color: var(--clr-text-primary-dark);
-    color: #fff;
-    img {
-      filter: invert(100%);
-    }
-  }
-}
-
-.work-sample {
-  .work-sample-container {
-    position: relative;
-    background-color: #f3f4f6;
-    .container {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      @media (max-width: 860px) {
-        flex-direction: column-reverse;
-      }
-      .col-1 {
-        @media (min-width: 860px) {
-          margin-top: 10rem;
-        }
-      }
-      .col-2 {
-        @media (min-width: 860px) {
-          margin-left: 2.5rem;
-        }
-        h2 {
-          text-align: right;
-          margin-bottom: 8.87rem;
-          @media (max-width: 860px) {
-            margin-bottom: 4.5rem;
-          }
-        }
-      }
-      .sample-col {
-        .sample {
-          display: block;
-          margin-bottom: 9.75rem;
-          @media (max-width: 860px) {
-            margin-bottom: 3.75rem;
-          }
-          h4 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-          }
-          p {
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
-            font-weight: 400;
-            @media (max-width: 860px) {
-              font-size: 1rem !important;
-              margin-bottom: 1rem;
-            }
-          }
-          .image-container {
-            overflow: hidden;
-            border-radius: 1.25rem;
-            margin-left: 2rem;
-            img {
-              max-width: 100%;
-              height: auto;
-              object-fit: cover;
-              transition: transform 0.5s ease;
-              vertical-align: top;
-            }
-          }
-          &:hover {
-            .image-container {
-              img {
-                transform: scale(1.07);
-              }
-            }
-          }
-        }
-      }
-    }
-    .lines {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      z-index: 5;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      @media (max-width: 860px) {
-        display: none;
-      }
-      hr {
-        border: 0.5px solid #828282;
-        opacity: 0.1;
-      }
-    }
-  }
-}
-
-.youtube {
-  .container {
-    @media (max-width: 860px) {
-      text-align: right;
-    }
-    .info {
-      margin-left: auto;
-      max-width: 37rem;
-      .arrow-link {
-        max-width: max-content;
-      }
-      @media (max-width: 860px) {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-    }
   }
 }
 </style>
