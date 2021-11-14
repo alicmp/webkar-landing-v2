@@ -20,9 +20,9 @@
       </a>
     </div>
     <div class="container controller">
-      <img src="@/assets/img/icon/left.svg" alt="" @click="previous">
+      <img src="@/assets/img/icon/left.svg" alt="" @click="previous" />
       <a href="/projects" class="border-btn">See More</a>
-      <img src="@/assets/img/icon/right.svg" alt="" @click="next">
+      <img src="@/assets/img/icon/right.svg" alt="" @click="next" />
     </div>
   </section>
 </template>
@@ -65,17 +65,29 @@ export default {
   methods: {
     next() {
       if (this.activeItem + 1 >= this.works.length) {
-        return
+        var that = this;
+        this.$refs.slider.scrollLeft -= "10";
+        setTimeout(() => {
+          that.$refs.slider.scrollLeft += "10";
+        }, 50);
+        return;
       }
       this.activeItem += 1;
-      this.$refs.slider.scrollLeft += this.$refs.slider.querySelector('.item').clientWidth
+      let offset = this.$refs.slider.querySelector(".item").clientWidth;
+      this.$refs.slider.scrollLeft += offset;
     },
     previous() {
       if (this.activeItem == 0) {
-        return
+        var that = this;
+        this.$refs.slider.scrollLeft += "10";
+        setTimeout(() => {
+          that.$refs.slider.scrollLeft -= "10";
+        }, 50);
+        return;
       }
       this.activeItem -= 1;
-      this.$refs.slider.scrollLeft -= this.$refs.slider.querySelector('.item').clientWidth
+      let offset = this.$refs.slider.querySelector(".item").clientWidth;
+      this.$refs.slider.scrollLeft -= offset;
     },
   },
 };
@@ -110,28 +122,42 @@ export default {
     }
     img {
       cursor: pointer;
+      @media (max-width: 860px) {
+        display: none;
+      }
     }
   }
   .items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 11.25rem;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-    padding-left: 11.25rem;
-    will-change: transform;
-    user-select: none;
-    .item {
-      display: flex;
+    gap: 2.25rem;
+    @media (min-width: 860px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 11.25rem;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      width: 100%;
+      padding-left: 11.25rem;
+      will-change: transform;
       user-select: none;
-      transition: all 0.2s ease-in;
-      transform: scale(0.80);
-      filter: gray; /* IE6-9 */
-      -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-      filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    }
+    @media (max-width: 860px) {
+      margin: auto;
+      width: min(90%, 1460px);
+    }
+    .item {
+      @media (min-width: 860px) {
+        display: flex;
+        user-select: none;
+        transition: all 0.2s ease-in;
+        transform: scale(0.8);
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+        filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+      }
       .text {
-        position: relative;
+        @media (min-width: 860px) {
+          position: relative;
+        }
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -143,20 +169,24 @@ export default {
           color: #bdbdbd;
         }
         .title {
-          position: absolute;
-          top: 35%;
-          left: -5.5rem;
-          max-width: 18.5rem;
+          @media (min-width: 860px) {
+            position: absolute;
+            top: 35%;
+            left: -5.5rem;
+            max-width: 18.5rem;
+          }
           font-weight: 500;
           font-size: 3rem;
           line-height: 72px;
           color: #392020;
         }
         .hashtag {
-          margin-left: 3rem;
-          margin-bottom: 2.5rem;
-          width: 13.43rem;
-          left: 3rem;
+          @media (min-width: 860px) {
+            margin-left: 3rem;
+            margin-bottom: 2.5rem;
+            width: 13.43rem;
+            left: 3rem;
+          }
           font-weight: 500;
           font-size: 22px;
           line-height: 33px;
@@ -169,13 +199,15 @@ export default {
         border-radius: 5px;
       }
     }
-    .active {
-      -webkit-filter: grayscale(0);
-      filter: none;
-      transform: scale(0.97);
-    }
-    .active:hover {
-      transform: scale(1);
+    @media (min-width: 860px) {
+      .active {
+        -webkit-filter: grayscale(0);
+        filter: none;
+        transform: scale(0.97);
+      }
+      .active:hover {
+        transform: scale(1);
+      }
     }
   }
 }
