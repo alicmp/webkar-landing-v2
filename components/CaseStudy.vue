@@ -1,23 +1,23 @@
 <template>
   <section id="case-study" class="case-study px-xl">
     <div class="container">
-      <h2>CASE STUDY</h2>
+      <h2>Case Study</h2>
     </div>
-    <div class="items" ref="slider">
-      <a
-        v-for="(item, index) in works"
-        :key="item.title"
-        :href="item.link"
-        class="item"
-        :class="{ active: activeItem == index }"
-      >
-        <img :src="item.image" :alt="item.title" />
-        <div class="text">
-          <p class="title">{{ item.title }}</p>
-          <p class="number">{{ item.number }}</p>
-          <p class="hashtag">{{ item.tag }}</p>
-        </div>
-      </a>
+    <div
+      ref="slider"
+      :style="`transform: translateX(${transformValue}vw)`"
+      class="items"
+    >
+      <div v-for="item in works" :key="item.title" class="item">
+        <a :href="item.link">
+          <img :src="item.image" :alt="item.title" />
+          <div class="text">
+            <p class="number">{{ item.number }}</p>
+            <p class="title" v-html="item.title"></p>
+            <p class="hashtag">{{ item.tag }}</p>
+          </div>
+        </a>
+      </div>
     </div>
     <div class="container controller">
       <img src="@/assets/img/icon/left.svg" alt="" @click="previous" />
@@ -33,28 +33,25 @@ export default {
 
   data() {
     return {
-      isDown: false,
-      startX: 0,
-      scrollLeft: 0,
-      activeItem: 0,
+      transformValue: -25,
       works: [
         {
-          image: require("@/assets/img/landing/webkar.jpg"),
-          title: "Webkar Platform",
-          tag: "#UIUX #Branding",
-          link: "/projects/webkaar",
+          image: require("@/assets/img/landing/neshiman.jpg"),
+          title: "Neshiman<br>Ferniture",
+          tag: "#Redisign",
+          link: "/projects/neshiman",
           number: "01",
         },
         {
-          image: require("@/assets/img/landing/neshiman.jpg"),
-          title: "Neshiman Ferniture",
-          tag: "#Redisign",
-          link: "/projects/neshiman",
+          image: require("@/assets/img/landing/webkar.jpg"),
+          title: "Webkar<br>Platform",
+          tag: "#UIUX #Branding",
+          link: "/projects/webkaar",
           number: "02",
         },
         {
           image: require("@/assets/img/landing/fitto.jpg"),
-          title: "Fitto Platform",
+          title: "Fitto<br>Platform",
           tag: "#UIUX",
           link: "/projects/fitto-eco",
           number: "03",
@@ -64,30 +61,10 @@ export default {
   },
   methods: {
     next() {
-      if (this.activeItem + 1 >= this.works.length) {
-        var that = this;
-        this.$refs.slider.scrollLeft -= "10";
-        setTimeout(() => {
-          that.$refs.slider.scrollLeft += "10";
-        }, 50);
-        return;
-      }
-      this.activeItem += 1;
-      let offset = this.$refs.slider.querySelector(".item").clientWidth;
-      this.$refs.slider.scrollLeft += offset;
+      if (this.transformValue > -75) this.transformValue -= 50;
     },
     previous() {
-      if (this.activeItem == 0) {
-        var that = this;
-        this.$refs.slider.scrollLeft += "10";
-        setTimeout(() => {
-          that.$refs.slider.scrollLeft -= "10";
-        }, 50);
-        return;
-      }
-      this.activeItem -= 1;
-      let offset = this.$refs.slider.querySelector(".item").clientWidth;
-      this.$refs.slider.scrollLeft -= offset;
+      if (this.transformValue < 25) this.transformValue += 50;
     },
   },
 };
@@ -95,6 +72,7 @@ export default {
 
 <style lang="scss" scoped>
 .case-study {
+  overflow: hidden;
   h2 {
     text-align: right;
     margin-bottom: 11.87rem;
@@ -119,6 +97,10 @@ export default {
       justify-content: center;
       width: max-content;
       font-size: 1.75rem;
+      @media (max-width: 860px) {
+        width: 16rem;
+        font-size: 1.5rem;
+      }
     }
     img {
       cursor: pointer;
@@ -128,85 +110,89 @@ export default {
     }
   }
   .items {
-    display: grid;
-    gap: 2.25rem;
     @media (min-width: 860px) {
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 11.25rem;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      width: 100%;
-      padding-left: 11.25rem;
-      will-change: transform;
-      user-select: none;
+      display: inline-flex;
     }
     @media (max-width: 860px) {
+      transform: translateX(0) !important;
       margin: auto;
       width: min(90%, 1460px);
+      margin-bottom: -5rem;
     }
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
     .item {
       @media (min-width: 860px) {
-        display: flex;
-        user-select: none;
-        transition: all 0.2s ease-in;
-        transform: scale(0.8);
-        filter: gray; /* IE6-9 */
-        -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-        filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+        width: 50vw;
       }
-      .text {
+      @media (max-width: 860px) {
+        margin-bottom: 5rem;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
         @media (min-width: 860px) {
-          position: relative;
+          display: flex;
         }
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .number {
-          margin-left: 3rem;
-          font-weight: 500;
-          font-size: 48px;
-          line-height: 72px;
-          color: #bdbdbd;
-        }
-        .title {
+        .text {
           @media (min-width: 860px) {
-            position: absolute;
-            top: 35%;
-            left: -5.5rem;
-            max-width: 18.5rem;
+            position: relative;
           }
-          font-weight: 500;
-          font-size: 3rem;
-          line-height: 72px;
-          color: #392020;
-        }
-        .hashtag {
-          @media (min-width: 860px) {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .number, .title {
+            @media (min-width: 860px) {
+              font-size: 3rem;
+              line-height: 72px;
+            }
+            @media (max-width: 860px) {
+              font-size: 2.4rem;
+              line-height: 3.5rem;
+            }
+            font-weight: 500;
+          }
+          .number {
             margin-left: 3rem;
-            margin-bottom: 2.5rem;
-            width: 13.43rem;
-            left: 3rem;
+            color: #bdbdbd;
           }
-          font-weight: 500;
-          font-size: 22px;
-          line-height: 33px;
-          color: #bdbdbd;
+          .title {
+            @media (min-width: 860px) {
+              position: absolute;
+              top: 35%;
+              left: -5.5rem;
+            }
+            @media (max-width: 860px) {
+              margin-left: 1rem;
+            }
+            color: #392020;
+          }
+          .hashtag {
+            @media (min-width: 860px) {
+              margin-bottom: 2.5rem;
+              width: max-content;
+              left: 3rem;
+              font-size: 1.375rem;
+              line-height: 2rem;
+            }
+            @media (max-width: 860px) {
+              margin-top: 1rem;
+              font-size: 1.125rem;
+              line-height: 1.6875rem;
+            }
+            margin-left: 3rem;
+            font-weight: 500;
+            color: #bdbdbd;
+          }
         }
-      }
-      img {
-        max-width: 35.3rem;
-        max-height: 24.1rem;
-        border-radius: 5px;
-      }
-    }
-    @media (min-width: 860px) {
-      .active {
-        -webkit-filter: grayscale(0);
-        filter: none;
-        transform: scale(0.97);
-      }
-      .active:hover {
-        transform: scale(1);
+        img {
+          @media (min-width: 860px) {
+            max-width: 40vw;
+          }
+          height: auto;
+          border-radius: 5px;
+        }
       }
     }
   }
