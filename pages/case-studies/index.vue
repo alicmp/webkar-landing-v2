@@ -10,32 +10,18 @@
 
     <header class="anim">
       <div class="container">
-        <h1>Works</h1>
+        <h1>Case Studies</h1>
       </div>
     </header>
 
     <div class="container">
       <div class="works-gallery">
-        <div class="tags anim">
-          <button
-            v-for="tag in tags"
-            :key="tag.code"
-            @click="selectedTag = tag.code"
-            class="tag"
-            :class="{ selected: tag.code == selectedTag }"
-          >
-            {{ tag.title }}
-          </button>
-        </div>
         <div class="gallery">
           <a
             class="work anim"
             v-for="work in works"
             :key="work.title"
             :href="work.link"
-            :class="{
-              show: work.tag == selectedTag || selectedTag == 'ALL',
-            }"
           >
             <img :src="work.image" :alt="work.title" />
             <h4>{{ work.title }}</h4>
@@ -60,64 +46,37 @@ export default {
   mixins: [animateOnScrollMixin],
   data() {
     return {
-      selectedTag: "ALL",
-      tags: [
-        {
-          title: "All",
-          code: "ALL",
-        },
-        {
-          title: "UI/UX",
-          code: "UIUX",
-        },
-        {
-          title: "Icongaraphy",
-          code: "ICON",
-        },
-        {
-          title: "Logo",
-          code: "LOGO",
-        },
-        {
-          title: "Illustration",
-          code: "ILLUS",
-        },
-        {
-          title: "Animation",
-          code: "ANI",
-        },
-      ],
       works: [
         {
           image: require("@/assets/img/works/6-webkar.jpg"),
           title: "Webkaar",
           tag: "UIUX",
-          link: "/projects/webkaar",
+          link: "/case-studies/webkaar",
         },
         {
           image: require("@/assets/img/works/1-interiorsolutions.jpg"),
           title: "Interior soloution",
           tag: "UIUX",
-          link: "/projects/interior-solution",
+          link: "/case-studies/interior-solution",
         },
         {
           image: require("@/assets/img/works/3-fitto.jpg"),
           title: "Fittoeco Tourisem",
           tag: "UIUX",
-          link: "fitto-eco",
+          link: "/case-studies/fitto-eco",
         },
         {
           image: require("@/assets/img/works/2-ddlock.jpg"),
           title: "DD-Lock",
           tag: "UIUX",
-          link: "/projects/ddlock",
+          link: "/case-studies/ddlock",
         },
       ],
     };
   },
   head() {
     return {
-      title: `Projects - Sahar Hatami`,
+      title: `Case Studies - Sahar Hatami`,
       meta: [
         {
           hid: "description",
@@ -221,7 +180,6 @@ header {
       row-gap: 4rem;
     }
     .work {
-      display: none;
       img {
         border-radius: 5px;
         transition: transform 0.5s ease;

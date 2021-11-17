@@ -7,14 +7,19 @@
         src="@/assets/img/icon/wheel.png"
         alt="wheel"
       />
-      <h2 class="anim">Case Study</h2>
+      <h2 class="anim">Case Studies</h2>
     </div>
     <div
       ref="slider"
       :style="`transform: translateX(${transformValue}vw)`"
       class="items"
     >
-      <div v-for="item in works" :key="item.title" class="item anim">
+      <div
+        v-for="(item, index) in works"
+        :key="item.title"
+        class="item anim"
+        :class="{ active: index == activeItem }"
+      >
         <a :href="item.link">
           <img :src="item.image" :alt="item.title" />
           <div class="text">
@@ -27,7 +32,7 @@
     </div>
     <div class="container controller">
       <img src="@/assets/img/icon/left.svg" alt="" @click="previous" />
-      <a href="/projects" class="border-btn">See More</a>
+      <a href="/case-studies" class="border-btn">See More</a>
       <img src="@/assets/img/icon/right.svg" alt="" @click="next" />
     </div>
   </section>
@@ -40,26 +45,27 @@ export default {
   data() {
     return {
       transformValue: -25,
+      activeItem: 1,
       works: [
         {
           image: require("@/assets/img/landing/neshiman.jpg"),
           title: "Neshiman<br>Ferniture",
           tag: "#Redisign",
-          link: "/projects/neshiman",
+          link: "/case-studies/neshiman",
           number: "01",
         },
         {
           image: require("@/assets/img/landing/webkar.jpg"),
           title: "Webkar<br>Platform",
           tag: "#UIUX #Branding",
-          link: "/projects/webkaar",
+          link: "/case-studies/webkaar",
           number: "02",
         },
         {
           image: require("@/assets/img/landing/fitto.jpg"),
           title: "Fitto<br>Platform",
           tag: "#UIUX",
-          link: "/projects/fitto-eco",
+          link: "/case-studies/fitto-eco",
           number: "03",
         },
       ],
@@ -67,10 +73,16 @@ export default {
   },
   methods: {
     next() {
-      if (this.transformValue > -75) this.transformValue -= 50;
+      if (this.transformValue > -75) {
+        this.transformValue -= 50;
+        this.activeItem++;
+      }
     },
     previous() {
-      if (this.transformValue < 25) this.transformValue += 50;
+      if (this.transformValue < 25) {
+        this.transformValue += 50;
+        this.activeItem--;
+      }
     },
     scrollRotate() {
       let image = document.getElementById("wheel");
@@ -150,7 +162,7 @@ export default {
       margin-bottom: -5rem;
     }
     overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in;
     .item {
       @media (min-width: 860px) {
         width: 50vw;
@@ -218,11 +230,35 @@ export default {
         img {
           @media (min-width: 860px) {
             max-width: 30vw;
+            transition: all 0.3s ease-in;
+            filter: gray;
+            /* IE6-9 */
+            -webkit-filter: grayscale(1);
+            /* Google Chrome, Safari 6+ & Opera 15+ */
+            filter: grayscale(1);
+
+            transform: scale(0.9);
+            transition: all 0.3s ease;
           }
           height: auto;
           object-fit: cover;
           border-radius: 5px;
         }
+      }
+    }
+    .item.active {
+      img {
+        transform: scale(0.95);
+        filter: none;
+        /* IE6-9 */
+        -webkit-filter: grayscale(0);
+        /* Google Chrome, Safari 6+ & Opera 15+ */
+        filter: grayscale(0);
+      }
+    }
+    .item:hover {
+      img {
+        transform: scale(1);
       }
     }
   }

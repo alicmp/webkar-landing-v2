@@ -222,7 +222,7 @@ img {
 .border-btn {
   margin         : auto;
   font-weight    : 600;
-  font-family: var(--ff-accent), sans-serif;
+  font-family    : var(--ff-accent), sans-serif;
   display        : flex;
   align-items    : center;
   justify-content: space-between;
@@ -239,6 +239,15 @@ img {
 
   @media (min-width: 860px) {
     font-size: 2.3rem;
+
+    &:hover {
+      background-color: var(--clr-text-primary-dark);
+      color           : #fff;
+
+      img {
+        filter: invert(1)
+      }
+    }
   }
 
   @media (max-width: 860px) {
@@ -252,6 +261,11 @@ img {
     background-color: var(--clr-text-primary-dark);
     color           : #fff;
 
+    &:hover {
+      background-color: #fff;
+      color          : var(--clr-text-primary-dark);
+    }
+
     img {
       display: none;
     }
@@ -260,6 +274,7 @@ img {
 
 .fitto:hover {
   cursor: not-allowed;
+
   img {
     filter        : gray;
     /* IE6-9 */

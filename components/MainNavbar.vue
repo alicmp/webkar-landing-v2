@@ -1,9 +1,10 @@
 <template>
   <nav class="main-nav">
     <div class="container">
-      <a class="title" href="/">Sahar H.</a>
+      <a class="title" href="/">SH.</a>
       <ul class="links gap-md">
-        <li><nuxt-link exact to="/projects">projects</nuxt-link></li>
+        <li><nuxt-link exact to="/case-studies">Case-studies</nuxt-link></li>
+        <li><nuxt-link exact to="/gallery">Gallery</nuxt-link></li>
         <li><nuxt-link exact to="/contact">Contact</nuxt-link></li>
       </ul>
     </div>
