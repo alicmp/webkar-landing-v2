@@ -1,6 +1,12 @@
 <template>
   <section id="case-study" class="case-study px-xl">
-    <div class="container">
+    <div class="container head">
+      <img
+        id="wheel"
+        class="wheel"
+        src="@/assets/img/icon/wheel.png"
+        alt="wheel"
+      />
       <h2 class="anim">Case Study</h2>
     </div>
     <div
@@ -66,6 +72,16 @@ export default {
     previous() {
       if (this.transformValue < 25) this.transformValue += 50;
     },
+    scrollRotate() {
+      let image = document.getElementById("wheel");
+      image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+    },
+  },
+  mounted() {
+    window.onscroll = function () {
+      let image = document.getElementById("wheel");
+      image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+    };
   },
 };
 </script>
@@ -73,6 +89,17 @@ export default {
 <style lang="scss" scoped>
 .case-study {
   overflow: hidden;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    .wheel {
+      width: 10.5rem;
+      height: 10.5rem;
+      @media (max-width: 860px) {
+        display: none;
+      }
+    }
+  }
   h2 {
     text-align: right;
     margin-bottom: 11.87rem;
@@ -145,7 +172,8 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          .number, .title {
+          .number,
+          .title {
             font-size: 3rem;
             line-height: 72px;
             @media (max-width: 1366px) {
@@ -161,8 +189,8 @@ export default {
           .title {
             @media (min-width: 860px) {
               position: absolute;
-              top: 35%;
-              left: -5.5rem;
+              top: 31%;
+              left: -5rem;
             }
             @media (max-width: 860px) {
               margin-left: 1rem;
@@ -189,7 +217,7 @@ export default {
         }
         img {
           @media (min-width: 860px) {
-            max-width: 35vw;
+            max-width: 30vw;
           }
           height: auto;
           object-fit: cover;

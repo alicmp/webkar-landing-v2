@@ -90,7 +90,7 @@ export default {
   mixins: [animateOnScrollMixin],
   components: {
     CaseStudyComponent,
-    GalleryComponent
+    GalleryComponent,
   },
   data() {
     return {
