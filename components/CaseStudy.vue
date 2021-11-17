@@ -51,7 +51,7 @@ export default {
           image: require("@/assets/img/landing/neshiman.jpg"),
           title: "Neshiman<br>Ferniture",
           tag: "#Redisign",
-          link: "/case-studies/neshiman",
+          link: "#",
           number: "01",
         },
         {

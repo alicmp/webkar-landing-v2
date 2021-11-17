@@ -120,6 +120,11 @@ export default {
       this.$refs.gModal.toggleModal();
     },
   },
+  created() {
+    if (this.$route.query.category) {
+      this.selectedTag = this.$route.query.category;
+    }
+  },
   head() {
     return {
       title: `Gallery - Sahar Hatami`,
