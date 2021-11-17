@@ -23,6 +23,10 @@ $px-mobile : 4rem;
   padding   : 0;
 }
 
+.poppins {
+  font-family: var(--ff-accent), sans-serif;
+}
+
 body {
   color      : var(--clr-text-primary-dark);
   font-family: var(--ff-primary), sans-serif;
@@ -218,6 +222,7 @@ img {
 .border-btn {
   margin         : auto;
   font-weight    : 600;
+  font-family: var(--ff-accent), sans-serif;
   display        : flex;
   align-items    : center;
   justify-content: space-between;

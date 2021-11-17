@@ -1,20 +1,20 @@
 <template>
   <section id="case-study" class="case-study px-xl">
     <div class="container">
-      <h2>Case Study</h2>
+      <h2 class="anim">Case Study</h2>
     </div>
     <div
       ref="slider"
       :style="`transform: translateX(${transformValue}vw)`"
       class="items"
     >
-      <div v-for="item in works" :key="item.title" class="item">
+      <div v-for="item in works" :key="item.title" class="item anim">
         <a :href="item.link">
           <img :src="item.image" :alt="item.title" />
           <div class="text">
-            <p class="number">{{ item.number }}</p>
-            <p class="title" v-html="item.title"></p>
-            <p class="hashtag">{{ item.tag }}</p>
+            <p class="number poppins">{{ item.number }}</p>
+            <p class="title poppins" v-html="item.title"></p>
+            <p class="hashtag poppins">{{ item.tag }}</p>
           </div>
         </a>
       </div>
@@ -88,6 +88,9 @@ export default {
   .controller {
     width: 50%;
     margin-top: 8rem;
+    @media (max-width: 860px) {
+      margin-top: 6rem;
+    }
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -143,11 +146,9 @@ export default {
           flex-direction: column;
           justify-content: space-between;
           .number, .title {
-            @media (min-width: 860px) {
-              font-size: 3rem;
-              line-height: 72px;
-            }
-            @media (max-width: 860px) {
+            font-size: 3rem;
+            line-height: 72px;
+            @media (max-width: 1366px) {
               font-size: 2.4rem;
               line-height: 3.5rem;
             }
@@ -188,9 +189,10 @@ export default {
         }
         img {
           @media (min-width: 860px) {
-            max-width: 40vw;
+            max-width: 35vw;
           }
           height: auto;
+          object-fit: cover;
           border-radius: 5px;
         }
       }

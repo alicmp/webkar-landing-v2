@@ -23,30 +23,7 @@
 
     <CaseStudy />
 
-    <section class="gallery">
-      <h2>GALLERY</h2>
-      <div class="lines">
-        <hr />
-        <hr />
-        <hr />
-        <hr />
-        <hr />
-      </div>
-      <div class="container">
-        <div class="items">
-          <a
-            v-for="item in gallery"
-            :key="item.title"
-            :href="item.link"
-            class="item"
-            :class="{ shift: item.is_shifted }"
-          >
-            <img :src="item.image" :alt="item.title" />
-            <p class="title">{{ item.title }}</p>
-          </a>
-        </div>
-      </div>
-    </section>
+    <Gallery />
 
     <section class="bio">
       <div class="sahar anim">
@@ -107,10 +84,13 @@
 <script>
 import animateOnScrollMixin from "@/mixins/animateOnScrollMixin";
 import CaseStudyComponent from "@/components/CaseStudy";
+import GalleryComponent from "@/components/Gallery";
+
 export default {
   mixins: [animateOnScrollMixin],
   components: {
     CaseStudyComponent,
+    GalleryComponent
   },
   data() {
     return {
@@ -139,32 +119,6 @@ export default {
           year: "2014",
           company: "Ara Clinic",
           position: "Marketing Consultant and Graphic Designer",
-        },
-      ],
-      gallery: [
-        {
-          title: "Logo Design",
-          image: require("@/assets/img/landing/logo.jpg"),
-          link: "gallery?category=logo",
-          is_shifted: false,
-        },
-        {
-          title: "Illustration",
-          image: require("@/assets/img/landing/illustration.jpg"),
-          link: "gallery?category=illustration",
-          is_shifted: true,
-        },
-        {
-          title: "Icongraphy",
-          image: require("@/assets/img/landing/icongraphy.jpg"),
-          link: "gallery?category=icongraphy",
-          is_shifted: false,
-        },
-        {
-          title: "Animation",
-          image: require("@/assets/img/landing/animation.jpg"),
-          link: "gallery?category=animation",
-          is_shifted: true,
         },
       ],
     };
@@ -265,66 +219,6 @@ header {
     cursor: pointer;
     transition: 100ms all;
     animation: moveDown 500ms alternate-reverse infinite ease;
-  }
-}
-
-.gallery {
-  background-color: #f3f4f6;
-  position: relative;
-  .lines {
-    z-index: 5;
-  }
-  h2 {
-    @media (min-width: 1440px) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 22.375rem;
-      line-height: 70%;
-      color: rgba(189, 189, 189, 0.1);
-    }
-  }
-  .container {
-    position: relative;
-    z-index: 6;
-    padding: 14.87rem 0 19.375rem 0;
-    .items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-      gap: 2rem;
-      @media (min-width: 1440px) {
-        .shift {
-          margin-top: -4rem;
-          height: calc(100% - 4rem);
-        }
-      }
-      .item {
-        position: relative;
-        border-radius: 5px;
-        overflow: hidden;
-        p {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: rgba(57, 32, 32, 0.8);
-          color: #fff;
-          position: absolute;
-          top: 0;
-          z-index: 7;
-          transition: 100ms ease-in;
-        }
-        img {
-          z-index: 6;
-        }
-      }
-      .item:hover {
-        p {
-          background-color: rgba(57, 32, 32, 0.6);
-        }
-      }
-    }
   }
 }
 
