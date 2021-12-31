@@ -17,65 +17,155 @@
     </header>
 
     <div class="container anim">
-      <div class="text pull-right">
-        <h3>Webkar UX/UI Design</h3>
-        <p>
-          Webkar is a site builder similar to Wix.com. As co-founder, I was
-          responsible for doing all the UI and UX works in the early stages. We
-          wanted to build something different from other website builders in the
-          market, Something that everyone can use, whether they are professional
-          designers or some local business owner who wanted a website for his
-          bakery.
-        </p>
+      <div class="text">
+        <div class="mt-4">
+          <h3>Introduction</h3>
+          <p>
+            Webkar is a platform for creating a website without any programming
+            knowledge. The goal of this startup was to simplify the process of
+            creating a website and reduce time and cost for every small business
+            owner. My goal for this project was to simplify the process and design
+            a user-friendly UI based on the user's experience.
+          </p>
+          </div>
+          <div class="mt-4">
+            <h3>Duration</h3>
+            <p>
+              4 months
+            </p>
+          </div>
+          <div class="mt-4">
+            <h3>Tools</h3>
+            <p>
+              <ul>
+                <li>
+                Figma
+                </li>
+                <li>
+                Photoshop
+                </li>
+                <li>
+                Illustrator
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="mt-4">
+            <h3>Role</h3>
+            <p>UX/UI designer</p>
+          </div>
+          <div class="mt-4">
+            <h3>Challenges</h3>
+            <p>
+              <ul>
+                <li>
+                  review similar
+                platforms both in Iran and abroad to find their weakness and strength.
+                </li>
+                <li>
+                  Simplify the user experience for working with the dashboard and
+                editor.
+                </li>
+              </ul>
+            </p>
+          </div>
       </div>
     </div>
 
-    <div class="full-width-image anim">
+    <div class="container anim">
       <img
         src="@/assets/img/projects/webkar/webkar-1.jpg"
         alt="Webkaar Design"
-        class="large-image"
+        class="large-image mt-4"
       />
     </div>
 
-    <div class="container anim">
-      <div class="text pull-left">
-        <h3>Easy To Use Dashboard</h3>
+    <div class="container">
+      <div class="text full-height-text pull-right anim mt-4">
+        <h3>My Workflow</h3>
         <p>
-          In the heart of Webkar lays the dashboard. It
-          could make or break the whole project. It should encapsulate all the
-          necessary tools for the user to build his website yet it must be
-          minimal so the user doesn't get lost in all the tools. I coordinated
-          multiple user research interviews And used them to design a
-          user-friendly dashboard.
+          In the beginning, I analyzed similar platforms, categorized priorities for the job,
+          and designed the user flow in addition to the low-fidelity wireframe.
         </p>
+      </div>
+      <div class="full-width-image anim mt-2">
+        <img
+          src="@/assets/img/projects/webkar/user-flow-1.jpg"
+          alt="Webkaar User Flow"
+          class="large-image"
+        />
       </div>
     </div>
 
     <div class="container">
-      <div class="image-gallery">
+      <div class="text full-height-text anim mt-4">
+        <p>
+            Next, I worked on Webkar's branding including choosing the typeface,
+          designing the logo and color pallet.
+          </p>
+      </div>
+      <div class="full-width-image anim mt-2">
         <img
           src="@/assets/img/projects/webkar/webkaar-2.jpg"
           alt="Webkaar Design"
           class="item-1 large-image anim"
         />
+      </div>
+      <div class="two-row-image anim mt-2">
         <img
-          src="@/assets/img/projects/webkar/webkaar-component.jpg"
-          alt="Webkaar Components"
-          class="item-1 large-image anim"
+          src="@/assets/img/projects/webkar/webkaar-logo.jpg"
+          alt="Webkaar Logo"
+          class="item-3 anim"
         />
         <img
           src="@/assets/img/projects/webkar/webkaar-3.jpg"
           alt="Webkaar Design"
           class="item-2 anim"
         />
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="text full-height-text pull-right anim mt-4">
+        <p>After taking care of the color
+          pallet and font I started to create the UI Kit and design the
+          components and pages. All pages (except the editor) are designed in 3
+          sizes (Full HD, HD, Mobile). I worked closely with developers to
+          ensure everything was going as we planned.</p>
+      </div>
+      <div class="full-width-image anim mt-2">
+        <img
+          src="@/assets/img/projects/webkar/webkaar-component.jpg"
+          alt="Webkaar Components"
+          class="item-1 large-image anim"
+        />
+      </div>
+      <div class="two-row-image anim mt-2">
         <img
           src="@/assets/img/projects/webkar/webkaar-logo.jpg"
           alt="Webkaar Logo"
           class="item-3 anim"
         />
+        <img
+          src="@/assets/img/projects/webkar/webkaar-3.jpg"
+          alt="Webkaar Design"
+          class="item-2 anim"
+        />
       </div>
     </div>
+
+    <div class="container">
+      <div class="text full-height-text anim mt-4">
+        <p>
+            Finally, I started user
+          testing with five candidates and gathered user data. With help of
+          developers, we analyzed the user's behavior to choose the best method
+          and increased user's satisfaction.
+          </p>
+      </div>
+    </div>
+    
   </article>
 </template>
 
@@ -90,8 +180,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content:
-            "I design (UI/UX) your ideas and make them reality.",
+          content: "I design (UI/UX) your ideas and make them reality.",
         },
       ],
     };
@@ -113,12 +202,22 @@ article {
 }
 .text {
   max-width: 838px;
-  padding: 10.43rem 0 15.37rem 0;
+  p {
+    margin-top: 1rem;
+  }
+}
+.full-height-text {
+  padding: 10.43rem 0 6.37rem 0;
   @media (max-width: 860px) {
     padding: 3rem 0 2.5rem 0;
   }
-  p {
-    margin-top: 1.5rem;
+}
+.two-row-image {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  @media (max-width: 860px) {
+    grid-auto-flow: row;
   }
 }
 .pull-right {

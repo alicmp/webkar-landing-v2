@@ -58,8 +58,16 @@ h3 {
   line-height: 6rem;
 }
 
-.mt-4 {
+ul {
+  list-style-position: inside;
+}
+
+.mt-2 {
   margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
 }
 
 @media (max-width: 860px) {
