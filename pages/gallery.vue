@@ -31,7 +31,7 @@
           <a
             class="work anim"
             v-for="work in works"
-            :key="work.title"
+            :key="work.image"
             :class="{
               show: work.tag == selectedTag || selectedTag == 'ALL',
             }"
@@ -51,7 +51,7 @@
       </a>
     </div>
 
-    <GalleryModal :item="selectedItem" ref="gModal" />
+    <GalleryModal :item="selectedItem" ref="gModal" v-on:forceStopVideo="forceStopVideo" />
   </div>
 </template>
 
@@ -74,7 +74,7 @@ export default {
           code: "UI",
         },
         {
-          title: "Logo Design",
+          title: "Logo",
           code: "LOGO",
         },
         {
@@ -142,14 +142,55 @@ export default {
           title: "Doctor Clinic",
           tag: "LOGO",
         },
+        {
+          image: require("@/assets/img/gallery/egypt.jpg"),
+          src: '/Egypt_by Sahar_Hatami.mp4',
+          title: "Egypt",
+          tag: "MOT",
+          type: 'vid',
+        },
+        {
+          image: require("@/assets/img/gallery/weblink.jpg"),
+          src: '/weblink.mp4',
+          title: "Weblink",
+          tag: "MOT",
+          type: 'vid',
+        },
+        {
+          image: require("@/assets/img/gallery/illus-1.png"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/illus-3.png"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/illus-4.png"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/illus-2-1.png"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/illus-2-2.png"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/illus-2-3.png"),
+          tag: "OTH",
+        },
       ],
     };
   },
   methods: {
     showItem(item) {
       this.selectedItem = item;
-      this.$refs.gModal.toggleModal();
+      this.$refs.gModal.showModal();
     },
+    forceStopVideo() {
+      this.selectedItem = {}
+    }
   },
   created() {
     if (this.$route.query.category) {

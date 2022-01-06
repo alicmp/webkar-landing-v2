@@ -1,23 +1,35 @@
 <template>
   <div class="modal-bg show-image-modal" ref="galleryItemModal">
-    <i class="material-icons clickable close-icon md-36" @click="toggleModal">close</i>
+    <i class="material-icons clickable close-icon md-36" @click="hideModal">close</i>
     <div class="image-container">
-      <img class="gallery-item" :src="item.image" alt />
+      <img v-if="!item.type" class="gallery-item" :src="item.image" alt />
+      <video-player v-if="item.type == 'vid'" class="gallery-item video" :src="item.src"/>
       <h3>{{item.title}}</h3>
     </div>
   </div>
 </template>
 
 <script>
+import VideoPlayer from 'nuxt-video-player'
+
+require('nuxt-video-player/src/assets/css/main.css')
+
 export default {
+  components: {
+    VideoPlayer
+  },
   props: {
     item: {
       type: Object,
     },
   },
   methods: {
-    toggleModal() {
-      this.$refs.galleryItemModal.classList.toggle("modal-bg-active");
+    showModal() {
+      this.$refs.galleryItemModal.classList.add("modal-bg-active");
+    },
+    hideModal() {
+      this.$refs.galleryItemModal.classList.remove("modal-bg-active");
+      this.$emit('forceStopVideo');
     },
   },
 };
@@ -43,6 +55,12 @@ export default {
       height: auto;
       max-height: 80vh;
       object-fit: contain;
+    }
+    .video {
+      width: 60vw;
+      @media (max-width: 680px) {
+        width: 90vw;
+      }
     }
     h3 {
       color: white;
