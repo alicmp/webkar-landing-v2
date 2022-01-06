@@ -84,15 +84,11 @@ export default {
         this.activeItem--;
       }
     },
-    scrollRotate() {
-      let image = document.getElementById("wheel");
-      image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
-    },
   },
   mounted() {
     window.onscroll = function () {
       let image = document.getElementById("wheel");
-      image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+      image.style.transform = "rotate(" + window.pageYOffset / 5 + "deg)";
     };
   },
 };

@@ -113,14 +113,14 @@
       </div>
       <div class="two-row-image anim mt-2">
         <img
-          src="@/assets/img/projects/webkar/webkaar-logo.jpg"
-          alt="Webkaar Logo"
+          src="@/assets/img/projects/webkar/Webkar-icons.jpg"
+          alt="Webkaar Icons"
           class="item-3 anim"
         />
         <img
-          src="@/assets/img/projects/webkar/webkaar-3.jpg"
-          alt="Webkaar Design"
-          class="item-2 anim"
+          src="@/assets/img/projects/webkar/webkaar-logo.jpg"
+          alt="Webkaar Logo"
+          class="item-3 anim"
         />
       </div>
     </div>
@@ -143,8 +143,8 @@
       </div>
       <div class="two-row-image anim mt-2">
         <img
-          src="@/assets/img/projects/webkar/webkaar-logo.jpg"
-          alt="Webkaar Logo"
+          src="@/assets/img/projects/webkar/webkar-modal-1.jpg"
+          alt="Webkaar Design"
           class="item-3 anim"
         />
         <img

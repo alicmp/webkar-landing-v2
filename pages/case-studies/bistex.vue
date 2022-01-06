@@ -63,7 +63,7 @@ export default {
   mixins: [animateOnScrollMixin],
   head() {
     return {
-      title: `DD Lock - Projects - Sahar Hatami`,
+      title: `Bistex Exchange - Projects - Sahar Hatami`,
       meta: [
         {
           hid: "description",
