@@ -10,39 +10,17 @@
 
     <header>
       <img
-        src="@/assets/img/projects/ddlock/ddlock.jpg"
-        alt="DD Lock"
+        src="@/assets/img/projects/bistex/bistex-1.jpg"
+        alt="bistex"
         class="anim large-image"
       />
     </header>
 
     <div class="container anim">
       <div class="text pull-right">
-        <h3>DD Lock</h3>
+        <h3>Bistex</h3>
         <p>
-          DD-lock is a company that sells all things related to smart homes,
-          such as smart locks and remote monitoring systems. I built sharp
-          interfaces and interactive experiences for their e-commerce website. I
-          chose black and blue colors for designing the website to convey the
-          feeling of luxury and safety.
-        </p>
-      </div>
-    </div>
-
-    <div class="full-width-image anim">
-      <img
-        src="@/assets/img/projects/ddlock/ddlock-2.jpg"
-        alt="DD-Lock Design"
-        class="large-image"
-      />
-    </div>
-
-    <div class="container anim">
-      <div class="text pull-left">
-        <p>
-          For designing the logo I combined three elements: 1- fingerprint,
-          which represents smart door locks. 2- lock Icon. 3- DD that is the
-          beginning of their brand name (DD Lock)
+          Bistex is a crypto exchange based in Iran.
         </p>
       </div>
     </div>
@@ -50,24 +28,29 @@
     <div class="container">
       <div class="image-gallery">
         <img
-        src="@/assets/img/projects/ddlock/ddlock-mobile.jpg"
-        alt="DD Lock Mobile Design"
-        class="item-1 large-image anim"
-      />
-        <img
-          src="@/assets/img/projects/ddlock/ddlock-3.jpg"
-          alt="DD Lock design"
+          src="@/assets/img/projects/bistex/bistex-2.jpg"
+          alt="bistex"
           class="item-1 large-image anim"
         />
         <img
-          src="@/assets/img/projects/ddlock/ddlock-logo.jpg"
-          alt="DD Lock Logo"
+          src="@/assets/img/projects/bistex/bistex-3.jpg"
+          alt="bistex dark mod"
           class="item-2 anim"
         />
         <img
-          src="@/assets/img/projects/ddlock/ddlock-design-library.jpg"
-          alt="DD Lock Design Library"
+          src="@/assets/img/projects/bistex/bistex-4.jpg"
+          alt="bistex light mod"
           class="item-3 anim"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="full-width-image anim mt-4">
+        <img
+          src="@/assets/img/projects/bistex/bistex-5.jpg"
+          alt="bistex"
+          class="large-image"
         />
       </div>
     </div>

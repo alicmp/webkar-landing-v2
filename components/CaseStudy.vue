@@ -48,10 +48,10 @@ export default {
       activeItem: 1,
       works: [
         {
-          image: require("@/assets/img/landing/neshiman.jpg"),
-          title: "Neshiman<br>Ferniture",
-          tag: "#Redisign",
-          link: "#",
+          image: require("@/assets/img/works/bistex.png"),
+          title: "Bistex<br>Exchange",
+          tag: "#UIUX",
+          link: "/case-studies/bistex",
           number: "01",
         },
         {

@@ -60,10 +60,10 @@ export default {
           link: "/case-studies/fitto-eco",
         },
         {
-          image: require("@/assets/img/works/2-ddlock.jpg"),
-          title: "DD-Lock",
+          image: require("@/assets/img/landing/bistex.png"),
+          title: "Bistex Exchange",
           tag: "UIUX",
-          link: "/case-studies/ddlock",
+          link: "/case-studies/bistex",
         },
       ],
     };
