@@ -50,7 +50,17 @@
     </div>
 
     <div class="container">
-      <div class="image-gallery">
+      <div class="full-width-image anim mt-4">
+        <img
+          src="@/assets/img/projects/fitto-eco/fitto-5.jpg"
+          alt="Fittoeco UI"
+          class="large-image"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="image-gallery mt-4">
         <img
           src="@/assets/img/projects/fitto-eco/fitto-4.jpg"
           alt="Fittoeco Character"
