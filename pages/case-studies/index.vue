@@ -54,12 +54,6 @@ export default {
           link: "/case-studies/webkaar",
         },
         {
-          image: require("@/assets/img/works/1-interiorsolutions.jpg"),
-          title: "Interior soloution",
-          tag: "UIUX",
-          link: "/case-studies/interior-solution",
-        },
-        {
           image: require("@/assets/img/works/3-fitto.jpg"),
           title: "Fittoeco Tourisem",
           tag: "UIUX",

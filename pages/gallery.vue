@@ -67,30 +67,61 @@ export default {
   data() {
     return {
       selectedItem: {},
-      selectedTag: "ALL",
+      selectedTag: "UI",
       tags: [
         {
-          title: "All",
-          code: "ALL",
-        },
-        {
-          title: "Icongaraphy",
-          code: "ICON",
+          title: "UI Design",
+          code: "UI",
         },
         {
           title: "Logo Design",
           code: "LOGO",
         },
         {
-          title: "Illustration",
-          code: "ILLUS",
+          title: "Motion",
+          code: "MOT",
         },
         {
-          title: "Animation",
-          code: "ANI",
+          title: "Other",
+          code: "OTH",
         },
       ],
       works: [
+        {
+          image: require("@/assets/img/gallery/neshiman.png"),
+          title: "Neshiman",
+          tag: "UI",
+        },
+        {
+          image: require("@/assets/img/gallery/ddlock-1.png"),
+          title: "DD-Lock",
+          tag: "UI",
+        },
+        {
+          image: require("@/assets/img/gallery/ddlock-2.png"),
+          title: "DD-Lock",
+          tag: "UI",
+        },
+        {
+          image: require("@/assets/img/gallery/ddlock-3.png"),
+          title: "DD-Lock",
+          tag: "UI",
+        },
+        {
+          image: require("@/assets/img/gallery/ddlock-mobile.png"),
+          title: "DD-Lock Mobile",
+          tag: "UI",
+        },
+        {
+          image: require("@/assets/img/gallery/1-interiorsolutions.jpg"),
+          title: "Interior Solutions",
+          tag: "UI",
+        },
+        {
+          image: require("@/assets/img/gallery/6-kalaraad.jpg"),
+          title: "Rad CMS",
+          tag: "UI",
+        },
         {
           image: require("@/assets/img/logo/webkaar-logo.jpg"),
           title: "Webkaar",
