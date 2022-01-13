@@ -57,6 +57,10 @@ export default {};
           border-bottom: 6px solid transparent;
           color: var(--text-dark);
           font-size: 14px;
+          @media (min-width: 680px) {
+            font-size: 1.225rem;
+            font-family: var(--ff-accent), sans-serif;
+          }
         }
         a:hover,
         a:focus,
@@ -69,6 +73,9 @@ export default {};
       }
       & > * + * {
         margin-left: 1rem;
+        @media (min-width: 680px) {
+          margin-left: 3.75rem;
+        }
       }
     }
   }

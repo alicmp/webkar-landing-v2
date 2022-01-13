@@ -286,6 +286,10 @@ header {
       &:hover {
         border-bottom: 4px solid #392020;
       }
+      @media (min-width: 680px) {
+        font-size: 1.225rem;
+        font-family: var(--ff-accent), sans-serif;
+      }
     }
     .selected {
       color: #252525;
@@ -294,6 +298,9 @@ header {
   }
   .tags > * + * {
     margin-left: 2rem;
+    @media (min-width: 680px) {
+      margin-left: 4rem;
+    }
   }
   .gallery {
     display: grid;
@@ -313,7 +320,10 @@ header {
         @media (min-width: 680px) {
           margin-top: 1.5rem;
         }
-        font-size: 28px;
+        font-size: 14px;
+        @media (min-width: 680px) {
+          font-size: 1.65rem;
+        }
       }
       &:hover {
         img {
