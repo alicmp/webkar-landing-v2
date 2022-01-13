@@ -31,20 +31,20 @@ export default {
     return {
       gallery: [
         {
-          title: "Logo Design",
-          image: require("@/assets/img/landing/logo.jpg"),
-          link: "gallery?category=LOGO",
+          title: "UI/UX",
+          image: require("@/assets/img/landing/ui-ux.png"),
+          link: "gallery?category=UI",
           is_shifted: false,
         },
         {
-          title: "Icongraphy",
-          image: require("@/assets/img/landing/icongraphy.jpg"),
-          link: "gallery?category=UI",
+          title: "Logo Design",
+          image: require("@/assets/img/landing/logo.jpg"),
+          link: "gallery?category=LOGO",
           is_shifted: true,
         },
         {
-          title: "Animation",
-          image: require("@/assets/img/landing/animation.jpg"),
+          title: "Motion",
+          image: require("@/assets/img/landing/motion.png"),
           link: "gallery?category=MOT",
           is_shifted: false,
         },
