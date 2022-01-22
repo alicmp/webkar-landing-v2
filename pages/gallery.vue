@@ -32,13 +32,13 @@
             class="work anim"
             v-for="work in works"
             :key="work.image"
-            :class="{
-              show: work.tag == selectedTag || selectedTag == 'ALL',
-            }"
+            :class="[
+              work.tag == selectedTag ? 'show' : '',
+              work.class
+            ]"
             @click="showItem(work)"
           >
             <img :src="work.image" :alt="work.title" />
-            <h4>{{ work.title }}</h4>
           </a>
         </div>
       </div>
@@ -88,97 +88,106 @@ export default {
       ],
       works: [
         {
-          image: require("@/assets/img/gallery/neshiman.png"),
-          title: "Neshiman",
+          image: require("@/assets/img/gallery/neshiman.jpg"),
           tag: "UI",
         },
         {
-          image: require("@/assets/img/gallery/ddlock-1.png"),
-          title: "DD-Lock",
+          image: require("@/assets/img/gallery/ddlock-1.jpg"),
           tag: "UI",
         },
         {
-          image: require("@/assets/img/gallery/ddlock-2.png"),
-          title: "DD-Lock",
+          image: require("@/assets/img/gallery/ddlock-2.jpg"),
           tag: "UI",
         },
         {
-          image: require("@/assets/img/gallery/ddlock-3.png"),
-          title: "DD-Lock",
+          image: require("@/assets/img/gallery/ddlock-3.jpg"),
           tag: "UI",
         },
         {
-          image: require("@/assets/img/gallery/ddlock-mobile.png"),
-          title: "DD-Lock Mobile",
+          image: require("@/assets/img/gallery/ddlock-mobile.jpg"),
           tag: "UI",
         },
         {
           image: require("@/assets/img/gallery/1-interiorsolutions.jpg"),
-          title: "Interior Solutions",
           tag: "UI",
         },
         {
-          image: require("@/assets/img/gallery/6-kalaraad.jpg"),
-          title: "Rad CMS",
+          image: require("@/assets/img/gallery/2-interiorsolutions.jpg"),
           tag: "UI",
         },
         {
           image: require("@/assets/img/logo/webkaar-logo.jpg"),
-          title: "Webkaar",
           tag: "LOGO",
         },
         {
           image: require("@/assets/img/logo/ddlock-logo.jpg"),
-          title: "Digital Door Lock",
           tag: "LOGO",
         },
         {
           image: require("@/assets/img/logo/mahour-logo.jpg"),
-          title: "Mahoor Carpet",
           tag: "LOGO",
         },
         {
           image: require("@/assets/img/logo/dr-logo.jpg"),
-          title: "Doctor Clinic",
+          tag: "LOGO",
+        },
+        {
+          image: require("@/assets/img/logo/tavvandad.jpg"),
           tag: "LOGO",
         },
         {
           image: require("@/assets/img/gallery/egypt.jpg"),
           src: '/Egypt_by Sahar_Hatami.mp4',
-          title: "Egypt",
           tag: "MOT",
           type: 'vid',
         },
         {
           image: require("@/assets/img/gallery/weblink.jpg"),
           src: '/weblink.mp4',
-          title: "Weblink",
           tag: "MOT",
           type: 'vid',
         },
         {
-          image: require("@/assets/img/gallery/illus-1.png"),
+          image: require("@/assets/img/gallery/other/illus-2-1.jpg"),
           tag: "OTH",
         },
         {
-          image: require("@/assets/img/gallery/illus-3.png"),
+          image: require("@/assets/img/gallery/other/illus-2-2.jpg"),
           tag: "OTH",
         },
         {
-          image: require("@/assets/img/gallery/illus-4.png"),
+          image: require("@/assets/img/gallery/other/illus-2-3.jpg"),
           tag: "OTH",
         },
         {
-          image: require("@/assets/img/gallery/illus-2-1.png"),
+          image: require("@/assets/img/gallery/other/fitto-trip-1.jpg"),
+          tag: "OTH",
+          class: 'work-large'
+        },
+        {
+          image: require("@/assets/img/gallery/other/fitto-1.jpg"),
           tag: "OTH",
         },
         {
-          image: require("@/assets/img/gallery/illus-2-2.png"),
+          image: require("@/assets/img/gallery/other/fitto-2.jpg"),
           tag: "OTH",
         },
         {
-          image: require("@/assets/img/gallery/illus-2-3.png"),
+          image: require("@/assets/img/gallery/other/fitto-3.jpg"),
           tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/other/fitto-4.jpg"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/other/egypt-1.jpg"),
+          tag: "OTH",
+        },
+        {
+          image: require("@/assets/img/gallery/other/fitto-trip-2.jpg"),
+          tag: "OTH",
+          class: 'work-large'
         },
       ],
     };
@@ -309,21 +318,20 @@ header {
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
       row-gap: 4rem;
     }
+    .work-large {
+      @media (min-width: 1400px) {
+        grid-column: span 2;
+      }
+    }
     .work {
       display: none;
       img {
         border-radius: 5px;
         transition: transform 0.5s ease;
         cursor: pointer;
-      }
-      h4 {
-        @media (min-width: 680px) {
-          margin-top: 1.5rem;
-        }
-        font-size: 14px;
-        @media (min-width: 680px) {
-          font-size: 1.65rem;
-        }
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
       }
       &:hover {
         img {
