@@ -15,7 +15,7 @@
           :key="item.title"
           :href="item.link"
           class="item anim"
-          :class="{ shift: item.is_shifted }"
+          :class="[ item.is_shifted ? 'shift' : 'not-shift' ]"
         >
           <img :src="item.image" :alt="item.title" />
           <p class="title">{{ item.title }}</p>
@@ -83,7 +83,6 @@ export default {
     //   display: none;
     // }
     @media (max-width: 860px) {
-      text-align: right;
       -webkit-text-stroke: 2px var(--clr-text-primary-dark);
       font-size: 3rem;
       line-height: 4.375rem;
@@ -102,6 +101,9 @@ export default {
     .items {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+      @media (max-width: 860px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
       gap: 2rem;
       @media (min-width: 1440px) {
         .shift {
@@ -110,8 +112,13 @@ export default {
         }
       }
       @media (max-width: 860px) {
+        gap: 1rem;
         .shift {
-          margin-left: auto;
+          margin-top: 4rem;
+          height: calc(100% - 4rem);
+        }
+        .not-shift {
+          height: calc(100% - 4rem);
         }
       }
       .item {
@@ -119,7 +126,7 @@ export default {
         border-radius: 5px;
         overflow: hidden;
         @media (max-width: 860px) {
-          width: 60%;
+          // width: 60%;
         }
         p {
           @media (min-width: 860px) {
