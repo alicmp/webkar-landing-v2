@@ -1,6 +1,6 @@
 <template>
   <div class="modal-bg show-image-modal" ref="galleryItemModal">
-    <i class="material-icons clickable close-icon md-36" @click="hideModal">close</i>
+    <img class="close-icon" :src="require('@/assets/img/icon/times-solid.svg')" @click="hideModal" />
     <div class="image-container">
       <img v-if="!item.type" class="gallery-item" :src="item.image" alt />
       <video-player v-if="item.type == 'vid'" class="gallery-item video" :src="item.src"/>
@@ -42,9 +42,11 @@ export default {
   align-items: center;
   .close-icon {
     position: absolute;
+    height: 2rem;
+    width: 2rem;
     top: 40px;
     right: 40px;
-    color: white;
+    cursor: pointer;
   }
   .image-container {
     display: flex;
